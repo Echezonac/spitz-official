@@ -1,0 +1,1 @@
+web gunicorn spitz.wsgi:application --log-file -

@@ -4,6 +4,7 @@
     margin: 0px;
     list-style: none;
     text-decoration: none;
+    overflow-x: hidden;
 }
 :root{
     --font1: 'Poppins', sans-serif;
@@ -13,32 +14,35 @@
     --red-color:#8d0000;
     --light-color:white;
 }
-.btnx:hover{
-  background-color:var(--red-color);
-  border: none;
-  padding: 5px 4px;
+::-webkit-scrollbar {
+  width: 2px;
 }
-.btnx:hover a{
-    color: var(--light-color);
-    font-weight: bold;
+::-webkit-scrollbar-track {
+  background: var(--light-color);
 }
-.btnx{
-    border-radius: 8px;
-    display: block;
-    width: fit-content;
-    padding: 3px 4px;
-    color: var(--dark-color);
-    /* transition: all 0.3s ease 0s; */
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--red-color);
+}
+.btn{
+    display: block !important;
+    width: fit-content !important;
+    border: none;
+}
+.btn-outline-dark:hover{
+    outline: none !important;
+    box-shadow: none !important;
+    background-color: var(--red-color) !important;
 }
 
 .heading{
     font-family:var(--font1);
     font-weight: 700;
-    line-height: 24px;
+    /* line-height: 24px; */
     text-decoration: none;
-    font-weight: 700;
     color: var(--darker-color);
     font-size: 2em;
+    border: none;
 }
 .heading:hover{
     color: var(--darker-color);
@@ -46,25 +50,12 @@
 p{
     font-family: var(--font1);
 }
-/* ====================Side-bar menu styling start */
 
-.sidebar-menu ul{
-    margin: 0px auto;
-    padding: 0px 16px;
+/* Navbar styling */
+#navbar{
+    display: flex;
+    align-items: center;
 }
-.sidebar-menu li{
-    width: 100% !important;
-} 
-.sidebar-menu a{
- text-decoration: none;
- color: var(--dark-color);
- font-size: 16px;
- line-height: 24px;
- font-weight: 400;
- font-family: var(--font2);
-}
-.vertical-line{
-    width: 1px;
-    height: 80vh;
-    background-color:gray;
-}
+
+
+

@@ -1,42 +1,195 @@
 {% extends 'base.html' %}
 {% load static %}
 <title>{% block title %}Home - spitz- www.spitz.com{% endblock %}</title>
-{% block description %}Spitz is a microblogging and social networking platform on which users post event, secret and reviews on products, individuals, organisation and location anonymously. The identity of it's users are private and ensure that only real and active users stay on the platform.{% endblock %}
-{% block keywords %}home, users, spitz, location, stay, active, real, only, ensure, private, identity, blog,event, secret, review, social,network, chat, data{% endblock %}
+{% block description %}Spitz is a microblogging and social networking platform on which users post event, secret and
+reviews on products, individuals, organisation and location anonymously. The identity of it's users are private and
+ensure that only real and active users stay on the platform.{% endblock %}
+{% block keywords %}home, users, spitz, location, stay, active, real, only, ensure, private, identity, blog,event,
+secret, review, social,network, chat, data{% endblock %}
 {% block main %}
-<!-- Full page start -->
-<section class="row">
-    <!-- left side start -->
-    <div class="col-lg-2 col-md-2 bg-light p-5" style="height: 100vh;">
-        <!-- brand name start -->
-        <a href="#" class="d-block mx-auto heading text-center my-3">
-            SPITZ
+<style>
+  .btn{
+    display: block !important;
+    width: fit-content !important;
+    border: none;
+}
+.btn-outline-dark:hover{
+    outline: none !important;
+    box-shadow: none !important;
+    background-color: var(--red-color) !important;
+}
+.btnx{
+  background-color:#8d0000 !important;
+  color: white !important;
+  
+}
+  .search-input-box {
+    border-radius: 8px;
+    background-color: #CFD2CF;
+  }
+
+  .search-input-box input {
+    border: none;
+    outline: none;
+    background-color: #CFD2CF;
+  }
+
+  .user-profile {
+    width: fit-content;
+    height: fit-content;
+    border-radius: 50%;
+  }
+
+  .bi-person-circle {
+    font-size: 30px;
+  }
+
+  @media (max-width:991px) {
+    .spitz-lg-ads {
+      display: none !important;
+    }
+  }
+</style>
+<section class="row" style="max-height: 100vh !important; height: 100vh !important;">
+  <!-- sidebar start -->
+  <div class="col-lg-2 col-md-3 bg-light" style="max-height:100vh !important;">
+    <ul class="p-0 py-4" style="width: 100%;height: inherit !important;">
+      <!-- brand name start -->
+      <li class="mx-auto">
+        <a href="#" class="d-block mx-auto heading mb-5 text-center">
+          SPITZ
         </a>
-        <!-- brand name end -->
-        <!-- navbar menu start -->
-        <div class="sidebar-menu">
-            <!-- top sidebar-menu start -->
-            <ul >
-                <li class="my-3 btnx"><a href="#"><i class=" mx-2 bi bi-house"></i>Home</a></li>
-                <li class="my-3 btnx"><a href="#"><i class=" mx-2 bi bi-calendar-event"></i>Events</a></li>
-                <li class="my-3 btnx"><a href="#"><i class=" mx-2 bi bi-eyeglasses"></i>Review</a></li>
-                <li class="my-3 btnx"><a href="#"><i class=" mx-2 bi bi-incognito"></i>Secret</a></li>
-            </ul>
-            <!-- top sidebar-menu end -->
-            <ul style="height: 30vh;"></ul>
-            <!-- bottom sidebar-menu start -->
-            <ul>
-                <li class="my-3 btnx"><a href="#"><i class=" mx-2 bi bi-sliders"></i>Settings</a></li>
-                <li class="my-3 btnx"><a href="#"><i class=" mx-2 bi bi-box-arrow-right"></i>Logout</a></li>
-            </ul>
-            <!-- bottom sidebar-menu end -->
+      </li>
+      <!-- brand name end -->
+      <!-- sidebar menu start -->
+      <li class="my-3">
+        <a href="#" class=" mx-auto btn btn-outline-dark text-decoration-none">
+          <i class=" mx-1 bi bi-house"></i>
+          Home
+        </a>
+      </li>
+      <li class="my-3">
+        <a href="#" class="mx-auto btn btn-outline-dark text-decoration-none">
+          <i class=" mx-1 bi bi-calendar-event"></i>
+          Events
+        </a>
+      </li>
+      <li class="my-3">
+        <a href="#" class="mx-auto btn btn-outline-dark text-decoration-none">
+          <i class=" mx-1 bi bi-eyeglasses"></i>
+          Review
+        </a>
+      </li>
+      <li class="my-3">
+        <a href="#" class="mx-auto btn btn-outline-dark text-decoration-none">
+          <i class=" mx-1 bi bi-incognito"></i>
+          Secret
+        </a>
+      </li>
+      <li class="my-3">
+        <a href="#" class="mx-auto btn btn-outline-dark text-decoration-none">
+          <i class=" mx-1 bi bi-sliders"></i>
+          Settings
+        </a>
+      </li>
+      <li class="my-3">
+        <a href="#" class="mx-auto btn btn-outline-dark text-decoration-none">
+          <i class=" mx-1 bi bi-box-arrow-right"></i>
+          Logout
+        </a>
+      </li>
+      <!-- sidebar menu end -->
+    </ul>
+  </div>
+  <!-- sidebar end -->
+  <!-- main section start -->
+  <div class="col-lg-10 col-md-9" style="max-height:100vh !important;">
+    <div class="row">
+      <!-- navbar start -->
+      <div class="col-12 bg-light d-flex align-items-center justify-content-between py-4 px-lg-5 px-md-3">
+        <!-- page title start -->
+        <p class="heading">Home</p>
+        <!-- page title end -->
+        <!-- menu start -->
+        <div class="navbar-menu d-flex align-items-center">
+          <!-- notification start -->
+          <a href="#" class="btn" style="background-color:#CFD2CF ;">
+            <i class="bi bi-bell text-dark"></i>
+          </a>
+          <!-- notification end -->
+          <!-- search bar start -->
+          <div class="search-input-box mx-4 px-3 py-2">
+            <i class="bi bi-search"></i>
+            <input type="search" name="" id="searchinput" placeholder="Search">
+          </div>
+          <!-- search bar end -->
+          <div class="user-profile py-1 px-2">
+            <i class="bi  bi-person-circle"></i>
+          </div>
         </div>
-        <!-- navbar menu end -->
+        <!-- menu end -->
+      </div>
+      <!-- navbar end -->
+      <!-- content start -->
+      <div class="col-12">
+        <!-- content body start -->
+        <div class="row">
+          <!-- spitz body start -->
+          <div class="col-lg-8 col-md-12" style="max-height:100vh;height: 100vh;">
+            <!-- spitz-body-start -->
+            <div class="row" style="overflow-y:auto ;">
+              <!-- spitz-col start -->
+              <div class="col-12 my-4">
+                <a href="{% url 'spitz-detail' %}" class="row px-3 spitz-box mx-auto bg-light" style="width: 80%; height: fit-content;box-shadow: 2px 3px 13px -1px rgba(0,0,0,0.75);text-decoration: none;">
+                  <!-- spitz-side bar start -->
+                  <div class="col-2 py-3" style="height:inherit ;">
+                    <img src="{% static 'img/spy.png' %}" class="img-fluid d-block mx-auto" alt=""
+                      style="border:1px solid black;border-radius: 50%;height: 50px;padding: 10px;">
+                  </div>
+                  <!-- spitz-side bar end -->
+                  <div class="col-10 p-0" style="height: inherit;">
+                    <!-- topbar start -->
+                    <div class="topbar px-1 d-flex justify-content-between align-items-center" style="height:50px;width: 100%;">
+                     <div class="d-flex justify-content-between align-items-center" style="height: fit-content;">
+                      <small class="text-dark fw-bold fs-5">Wxiixioo</small>
+                      <small class="px-2 text-secondary">2h</small>
+                     </div>
+                     <button class="btn btnx">Event</button>
+                    </div>
+                    <!-- text-box -->
+                    <div class="text-box px-1 mt-2" style="height: 100px;width: 100%;">
+                    <p class="text-dark" style="text-align:justify ;font-size: small;">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore sed sunt similique veniam impedit, labore commodi nesciunt adipisci vitae blanditiis distinctio officia sapiente nulla fugiat.
+                    </p>
+                    </div>
+                    <!-- text-img-box -->
+                    <div class="text-img-box bg-light" style="height: 300px;width: 100%;">
+                    <img src="{% static 'img/blog-img.jpg' %}" alt="" style="max-height: 300px; border-radius: 10px;">
+                    </div>
+                    <!-- spitz-blog-icon start -->
+                    <div class="spitz-blog-icon py-3 px-2 d-flex justify-content-around">
+                      <i class="bi bi-chat-left text-dark"></i>
+                      <i class="bi bi-heart text-dark"></i>
+                      <i class="bi bi-share text-dark"></i>
+                    </div>
+                    <!-- spitz-blog-icon end -->
+                  </div>
+                </a>
+              </div>
+              <!-- spitz-col end -->
+            </div>
+            <!-- spitz-body-end -->
+          </div>
+          <!-- spitz body end -->
+          <!-- ads start -->
+          <div class="col-lg-4 col-md-5 bg-danger spitz-lg-ads" style="height:100px;"></div>
+          <!-- ads end -->
+        </div>
+        <!-- content body end -->
+      </div>
+      <!-- content end -->
     </div>
-    <!-- left side end -->
-    <!--right side start  -->
-    <div class="col-lg-10 col-md-10" style="height: 100vh;"></div>
-    <!-- right side end -->
+  </div>
+  <!-- main section end -->
 </section>
-<!-- full page end -->
 {% endblock %}

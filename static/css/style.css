@@ -49,6 +49,7 @@
 }
 p{
     font-family: var(--font1);
+    font-size: small;
 }
 
 /* Navbar styling */
@@ -56,6 +57,7 @@ p{
     display: flex;
     align-items: center;
 }
+
 
 
 

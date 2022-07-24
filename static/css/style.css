@@ -43,6 +43,7 @@
     color: var(--darker-color);
     font-size: 2em;
     border: none;
+    text-transform: uppercase;
 }
 .heading:hover{
     color: var(--darker-color);

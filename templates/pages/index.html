@@ -461,58 +461,41 @@ secret, review, social,network, chat, data{% endblock %}
 </section>
 <!-- Large and Medium Screen UI End -->
 <!-- Small Screen Ui Start -->
-<section class="row" style="max-height: 100vh;height: 100vh; background-color: #CFD2CF;">
-<!-- topbar start -->
-<div class="col-12 bg-light d-flex justify-content-around align-items-center" style="max-height: 10vh;height: 10vh;">
-  <!-- profile start -->
-  <div class="user-profile py-1 px-2">
-    <a href="{% url 'profile-page' %}" class="text-decoration-none text-dark">
-      <i class="bi  bi-person-circle"></i>
-    </a>
+<section class="row" style="max-height: 100vh !important;height: 100vh !important; background-color: #CFD2CF;">
+ <!-- header start -->
+ <div class="col-12 bg-light d-flex align-items-center justify-content-around" style="max-height:7vh ;height: 7vh; ">
+  <div class="row">
+    <!-- profile start --> 
+    <div class="col-2 d-flex align-items-center justify-content-center">
+      <a href="{% url 'profile-page' %}" class="text-decoration-none text-dark">
+        <i class="bi  bi-person-circle"></i>
+      </a>
+    </div>
+    <!-- search bar -->
+    <div class="col-8 d-flex align-items-center justify-content-center">
+      <div class="search-input-box mx-2 px-2 py-1" style="width: 100%;">
+        <i class="bi bi-search"></i>
+        <input type="search" name="" id="searchinput" placeholder="Search" style="width: 80% !important; ;">
+      </div>
+    </div>
+    <!-- notification -->
+    <div class="col-2 d-flex align-items-center justify-content-center">
+      <a href="{% url 'notify-page' %}" class="btn" style="background-color:#CFD2CF ;">
+        <i class="bi bi-bell text-dark"></i>
+      </a>
+    </div>
   </div>
-  <!-- profile end -->
-  <!-- title start -->
-  <a href="{% url 'profile-page' %}" class="text-decoration-none text-dark heading fs-4 text-uppercase">
-    Spitz
-  </a>
-  <!-- title end -->
-  <!-- notification start -->
-  <a href="{% url 'notify-page' %}" class="btn" style="background-color:#CFD2CF ;">
-    <i class="bi bi-bell text-dark"></i>
-  </a>
-  <!-- notification end -->
-</div>
-<!-- topbar end -->
-<!-- menu start -->
-<div class="col-12 bg-light py-3" style="max-height: 10vh;height: fit-content;">
-<ul class="nav nav-fill">
-  <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="{% url 'home_page' %}">
-      <i class=" mx-1 bi bi-house text-dark"></i>
-    </a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">
-      <i class=" mx-1 bi bi-calendar-event text-dark"></i>
-    </a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">
-      <i class=" mx-1 bi bi-file-earmark-lock2 text-dark"></i>
-    </a>
-  </li>
-</ul>
-</div>
-<!-- menu end -->
+ </div>
+ <!-- header end -->
 <!-- content start -->
-<div class="col-12" style="max-height: 70vh; height: 70vh;">
+<div class="col-12" style="max-height: 86vh; height: 86vh;">
   <!-- spitz-body-start -->
   <div class="row" style="overflow-y:auto ;">
     <!-- spitz-col start -->
     <div class="col-12 my-3" style="border-radius: 40px;">
       <a href="{% url 'spitz-detail' %}" class="row px-3 spitz-box mx-auto bg-light"
         style="width: 100%; height: fit-content;box-shadow: 2px 3px 13px -1px rgba(0,0,0,0.75);text-decoration: none;">
-    
+
         <div class="col-12 p-0" style="height: inherit;">
           <!-- topbar start -->
           <div class="topbar px-1 d-flex justify-content-between align-items-center" style="height:50px;width: 100%;">
@@ -536,7 +519,7 @@ secret, review, social,network, chat, data{% endblock %}
               style="max-height: 200px; border-radius: 10px;">
           </div>
           <!-- spitz-blog-icon start -->
-          <div class="spitz-blog-icon py-2 px-2 d-flex justify-content-around" >
+          <div class="spitz-blog-icon py-2 px-2 d-flex justify-content-around">
             <i class="bi bi-chat-left text-dark"></i>
             <i class="bi bi-heart text-dark"></i>
             <i class="bi bi-share text-dark"></i>
@@ -546,187 +529,187 @@ secret, review, social,network, chat, data{% endblock %}
       </a>
     </div>
     <!-- spitz-col end -->
-      <!-- spitz-col start -->
-      <div class="col-12 my-3" style="border-radius: 40px;">
-        <a href="{% url 'spitz-detail' %}" class="row px-3 spitz-box mx-auto bg-light"
-          style="width: 100%; height: fit-content;box-shadow: 2px 3px 13px -1px rgba(0,0,0,0.75);text-decoration: none;">
-      
-          <div class="col-12 p-0" style="height: inherit;">
-            <!-- topbar start -->
-            <div class="topbar px-1 d-flex justify-content-between align-items-center" style="height:50px;width: 100%;">
-              <div class="d-flex justify-content-between align-items-center" style="height: fit-content;">
-                <small class="text-dark fw-bold fs-5">Wxiixioo</small>
-                <small class="px-2 text-secondary">2h</small>
-              </div>
-              <button class="btn btnx">Event</button>
+    <!-- spitz-col start -->
+    <div class="col-12 my-3" style="border-radius: 40px;">
+      <a href="{% url 'spitz-detail' %}" class="row px-3 spitz-box mx-auto bg-light"
+        style="width: 100%; height: fit-content;box-shadow: 2px 3px 13px -1px rgba(0,0,0,0.75);text-decoration: none;">
+
+        <div class="col-12 p-0" style="height: inherit;">
+          <!-- topbar start -->
+          <div class="topbar px-1 d-flex justify-content-between align-items-center" style="height:50px;width: 100%;">
+            <div class="d-flex justify-content-between align-items-center" style="height: fit-content;">
+              <small class="text-dark fw-bold fs-5">Wxiixioo</small>
+              <small class="px-2 text-secondary">2h</small>
             </div>
-            <!-- text-box -->
-            <div class="text-box px-1 mt-1" style="height: 100px;width: 100%;">
-              <p class="text-dark" style="text-align:justify ;font-size: small;">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore sed sunt similique veniam
-                impedit, labore commodi nesciunt adipisci vitae blanditiis distinctio officia sapiente nulla
-                fugiat.
-              </p>
-            </div>
-            <!-- text-img-box -->
-            <div class="text-img-box bg-light" style="height: 200px;width: 100%;">
-              <img src="{% static 'img/blog-img.jpg' %}" class="d-block w-100" alt=""
-                style="max-height: 200px; border-radius: 10px;">
-            </div>
-            <!-- spitz-blog-icon start -->
-            <div class="spitz-blog-icon py-2 px-2 d-flex justify-content-around">
-              <i class="bi bi-chat-left text-dark"></i>
-              <i class="bi bi-heart text-dark"></i>
-              <i class="bi bi-share text-dark"></i>
-            </div>
-            <!-- spitz-blog-icon end -->
+            <button class="btn btnx">Event</button>
           </div>
-        </a>
-      </div>
-      <!-- spitz-col end -->
-        <!-- spitz-col start -->
-        <div class="col-12 my-3" style="border-radius: 40px;">
-          <a href="{% url 'spitz-detail' %}" class="row px-3 spitz-box mx-auto bg-light"
-            style="width: 100%; height: fit-content;box-shadow: 2px 3px 13px -1px rgba(0,0,0,0.75);text-decoration: none;">
-        
-            <div class="col-12 p-0" style="height: inherit;">
-              <!-- topbar start -->
-              <div class="topbar px-1 d-flex justify-content-between align-items-center" style="height:50px;width: 100%;">
-                <div class="d-flex justify-content-between align-items-center" style="height: fit-content;">
-                  <small class="text-dark fw-bold fs-5">Wxiixioo</small>
-                  <small class="px-2 text-secondary">2h</small>
-                </div>
-                <button class="btn btnx">Event</button>
-              </div>
-              <!-- text-box -->
-              <div class="text-box px-1 mt-1" style="height: 100px;width: 100%;">
-                <p class="text-dark" style="text-align:justify ;font-size: small;">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore sed sunt similique veniam
-                  impedit, labore commodi nesciunt adipisci vitae blanditiis distinctio officia sapiente nulla
-                  fugiat.
-                </p>
-              </div>
-              <!-- text-img-box -->
-              <div class="text-img-box bg-light" style="height: 200px;width: 100%;">
-                <img src="{% static 'img/blog-img.jpg' %}" class="d-block w-100" alt=""
-                  style="max-height: 200px; border-radius: 10px;">
-              </div>
-              <!-- spitz-blog-icon start -->
-              <div class="spitz-blog-icon py-2 px-2 d-flex justify-content-around">
-                <i class="bi bi-chat-left text-dark"></i>
-                <i class="bi bi-heart text-dark"></i>
-                <i class="bi bi-share text-dark"></i>
-              </div>
-              <!-- spitz-blog-icon end -->
-            </div>
-          </a>
+          <!-- text-box -->
+          <div class="text-box px-1 mt-1" style="height: 100px;width: 100%;">
+            <p class="text-dark" style="text-align:justify ;font-size: small;">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore sed sunt similique veniam
+              impedit, labore commodi nesciunt adipisci vitae blanditiis distinctio officia sapiente nulla
+              fugiat.
+            </p>
+          </div>
+          <!-- text-img-box -->
+          <div class="text-img-box bg-light" style="height: 200px;width: 100%;">
+            <img src="{% static 'img/blog-img.jpg' %}" class="d-block w-100" alt=""
+              style="max-height: 200px; border-radius: 10px;">
+          </div>
+          <!-- spitz-blog-icon start -->
+          <div class="spitz-blog-icon py-2 px-2 d-flex justify-content-around">
+            <i class="bi bi-chat-left text-dark"></i>
+            <i class="bi bi-heart text-dark"></i>
+            <i class="bi bi-share text-dark"></i>
+          </div>
+          <!-- spitz-blog-icon end -->
         </div>
-        <!-- spitz-col end -->
-          <!-- spitz-col start -->
-          <div class="col-12 my-3" style="border-radius: 40px;">
-            <a href="{% url 'spitz-detail' %}" class="row px-3 spitz-box mx-auto bg-light"
-              style="width: 100%; height: fit-content;box-shadow: 2px 3px 13px -1px rgba(0,0,0,0.75);text-decoration: none;">
-          
-              <div class="col-12 p-0" style="height: inherit;">
-                <!-- topbar start -->
-                <div class="topbar px-1 d-flex justify-content-between align-items-center" style="height:50px;width: 100%;">
-                  <div class="d-flex justify-content-between align-items-center" style="height: fit-content;">
-                    <small class="text-dark fw-bold fs-5">Wxiixioo</small>
-                    <small class="px-2 text-secondary">2h</small>
-                  </div>
-                  <button class="btn btnx">Event</button>
-                </div>
-                <!-- text-box -->
-                <div class="text-box px-1 mt-1" style="height: 100px;width: 100%;">
-                  <p class="text-dark" style="text-align:justify ;font-size: small;">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore sed sunt similique veniam
-                    impedit, labore commodi nesciunt adipisci vitae blanditiis distinctio officia sapiente nulla
-                    fugiat.
-                  </p>
-                </div>
-                <!-- text-img-box -->
-                <div class="text-img-box bg-light" style="height: 200px;width: 100%;">
-                  <img src="{% static 'img/blog-img.jpg' %}" class="d-block w-100" alt=""
-                    style="max-height: 200px; border-radius: 10px;">
-                </div>
-                <!-- spitz-blog-icon start -->
-                <div class="spitz-blog-icon py-2 px-2 d-flex justify-content-around">
-                  <i class="bi bi-chat-left text-dark"></i>
-                  <i class="bi bi-heart text-dark"></i>
-                  <i class="bi bi-share text-dark"></i>
-                </div>
-                <!-- spitz-blog-icon end -->
-              </div>
-            </a>
-          </div>
-          <!-- spitz-col end -->
-            <!-- spitz-col start -->
-            <div class="col-12 my-3" style="border-radius: 40px;">
-              <a href="{% url 'spitz-detail' %}" class="row px-3 spitz-box mx-auto bg-light"
-                style="width: 100%; height: fit-content;box-shadow: 2px 3px 13px -1px rgba(0,0,0,0.75);text-decoration: none;">
-            
-                <div class="col-12 p-0" style="height: inherit;">
-                  <!-- topbar start -->
-                  <div class="topbar px-1 d-flex justify-content-between align-items-center" style="height:50px;width: 100%;">
-                    <div class="d-flex justify-content-between align-items-center" style="height: fit-content;">
-                      <small class="text-dark fw-bold fs-5">Wxiixioo</small>
-                      <small class="px-2 text-secondary">2h</small>
-                    </div>
-                    <button class="btn btnx">Event</button>
-                  </div>
-                  <!-- text-box -->
-                  <div class="text-box px-1 mt-1" style="height: 100px;width: 100%;">
-                    <p class="text-dark" style="text-align:justify ;font-size: small;">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore sed sunt similique veniam
-                      impedit, labore commodi nesciunt adipisci vitae blanditiis distinctio officia sapiente nulla
-                      fugiat.
-                    </p>
-                  </div>
-                  <!-- text-img-box -->
-                  <div class="text-img-box bg-light" style="height: 200px;width: 100%;">
-                    <img src="{% static 'img/blog-img.jpg' %}" class="d-block w-100" alt=""
-                      style="max-height: 200px; border-radius: 10px;">
-                  </div>
-                  <!-- spitz-blog-icon start -->
-                  <div class="spitz-blog-icon py-2 px-2 d-flex justify-content-around">
-                    <i class="bi bi-chat-left text-dark"></i>
-                    <i class="bi bi-heart text-dark"></i>
-                    <i class="bi bi-share text-dark"></i>
-                  </div>
-                  <!-- spitz-blog-icon end -->
-                </div>
-              </a>
+      </a>
+    </div>
+    <!-- spitz-col end -->
+    <!-- spitz-col start -->
+    <div class="col-12 my-3" style="border-radius: 40px;">
+      <a href="{% url 'spitz-detail' %}" class="row px-3 spitz-box mx-auto bg-light"
+        style="width: 100%; height: fit-content;box-shadow: 2px 3px 13px -1px rgba(0,0,0,0.75);text-decoration: none;">
+
+        <div class="col-12 p-0" style="height: inherit;">
+          <!-- topbar start -->
+          <div class="topbar px-1 d-flex justify-content-between align-items-center" style="height:50px;width: 100%;">
+            <div class="d-flex justify-content-between align-items-center" style="height: fit-content;">
+              <small class="text-dark fw-bold fs-5">Wxiixioo</small>
+              <small class="px-2 text-secondary">2h</small>
             </div>
-            <!-- spitz-col end -->
+            <button class="btn btnx">Event</button>
+          </div>
+          <!-- text-box -->
+          <div class="text-box px-1 mt-1" style="height: 100px;width: 100%;">
+            <p class="text-dark" style="text-align:justify ;font-size: small;">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore sed sunt similique veniam
+              impedit, labore commodi nesciunt adipisci vitae blanditiis distinctio officia sapiente nulla
+              fugiat.
+            </p>
+          </div>
+          <!-- text-img-box -->
+          <div class="text-img-box bg-light" style="height: 200px;width: 100%;">
+            <img src="{% static 'img/blog-img.jpg' %}" class="d-block w-100" alt=""
+              style="max-height: 200px; border-radius: 10px;">
+          </div>
+          <!-- spitz-blog-icon start -->
+          <div class="spitz-blog-icon py-2 px-2 d-flex justify-content-around">
+            <i class="bi bi-chat-left text-dark"></i>
+            <i class="bi bi-heart text-dark"></i>
+            <i class="bi bi-share text-dark"></i>
+          </div>
+          <!-- spitz-blog-icon end -->
+        </div>
+      </a>
+    </div>
+    <!-- spitz-col end -->
+    <!-- spitz-col start -->
+    <div class="col-12 my-3" style="border-radius: 40px;">
+      <a href="{% url 'spitz-detail' %}" class="row px-3 spitz-box mx-auto bg-light"
+        style="width: 100%; height: fit-content;box-shadow: 2px 3px 13px -1px rgba(0,0,0,0.75);text-decoration: none;">
+
+        <div class="col-12 p-0" style="height: inherit;">
+          <!-- topbar start -->
+          <div class="topbar px-1 d-flex justify-content-between align-items-center" style="height:50px;width: 100%;">
+            <div class="d-flex justify-content-between align-items-center" style="height: fit-content;">
+              <small class="text-dark fw-bold fs-5">Wxiixioo</small>
+              <small class="px-2 text-secondary">2h</small>
+            </div>
+            <button class="btn btnx">Event</button>
+          </div>
+          <!-- text-box -->
+          <div class="text-box px-1 mt-1" style="height: 100px;width: 100%;">
+            <p class="text-dark" style="text-align:justify ;font-size: small;">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore sed sunt similique veniam
+              impedit, labore commodi nesciunt adipisci vitae blanditiis distinctio officia sapiente nulla
+              fugiat.
+            </p>
+          </div>
+          <!-- text-img-box -->
+          <div class="text-img-box bg-light" style="height: 200px;width: 100%;">
+            <img src="{% static 'img/blog-img.jpg' %}" class="d-block w-100" alt=""
+              style="max-height: 200px; border-radius: 10px;">
+          </div>
+          <!-- spitz-blog-icon start -->
+          <div class="spitz-blog-icon py-2 px-2 d-flex justify-content-around">
+            <i class="bi bi-chat-left text-dark"></i>
+            <i class="bi bi-heart text-dark"></i>
+            <i class="bi bi-share text-dark"></i>
+          </div>
+          <!-- spitz-blog-icon end -->
+        </div>
+      </a>
+    </div>
+    <!-- spitz-col end -->
+    <!-- spitz-col start -->
+    <div class="col-12 my-3" style="border-radius: 40px;">
+      <a href="{% url 'spitz-detail' %}" class="row px-3 spitz-box mx-auto bg-light"
+        style="width: 100%; height: fit-content;box-shadow: 2px 3px 13px -1px rgba(0,0,0,0.75);text-decoration: none;">
+
+        <div class="col-12 p-0" style="height: inherit;">
+          <!-- topbar start -->
+          <div class="topbar px-1 d-flex justify-content-between align-items-center" style="height:50px;width: 100%;">
+            <div class="d-flex justify-content-between align-items-center" style="height: fit-content;">
+              <small class="text-dark fw-bold fs-5">Wxiixioo</small>
+              <small class="px-2 text-secondary">2h</small>
+            </div>
+            <button class="btn btnx">Event</button>
+          </div>
+          <!-- text-box -->
+          <div class="text-box px-1 mt-1" style="height: 100px;width: 100%;">
+            <p class="text-dark" style="text-align:justify ;font-size: small;">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore sed sunt similique veniam
+              impedit, labore commodi nesciunt adipisci vitae blanditiis distinctio officia sapiente nulla
+              fugiat.
+            </p>
+          </div>
+          <!-- text-img-box -->
+          <div class="text-img-box bg-light" style="height: 200px;width: 100%;">
+            <img src="{% static 'img/blog-img.jpg' %}" class="d-block w-100" alt=""
+              style="max-height: 200px; border-radius: 10px;">
+          </div>
+          <!-- spitz-blog-icon start -->
+          <div class="spitz-blog-icon py-2 px-2 d-flex justify-content-around">
+            <i class="bi bi-chat-left text-dark"></i>
+            <i class="bi bi-heart text-dark"></i>
+            <i class="bi bi-share text-dark"></i>
+          </div>
+          <!-- spitz-blog-icon end -->
+        </div>
+      </a>
+    </div>
+    <!-- spitz-col end -->
   </div>
   <!-- spitz-body-end -->
 </div>
 <!-- content end -->
-<!-- bottom nav start -->
-<div class="col-12 bg-light  d-flex align-items-center justify-content-around" style="max-height: 10vh;height: 10vh;">
-<!-- menu start -->
-<div class="navbar-menu d-flex align-items-center">
-  <!-- notification start -->
-  <a href="#" class="btn" style="background-color:#CFD2CF ;">
-    <i class="bi bi-plus-square-fill"></i>
-  </a>
-  <!-- notification end -->
-  <!-- search bar start -->
-  <div class="search-input-box mx-3 px-3 py-2">
-    <i class="bi bi-search"></i>
-    <input type="search" name="" id="searchinput" placeholder="Search">
-  </div>
-  <!-- search bar end -->
-  <!-- review -->
-  <div class="user-profile py-1 px-2">
-    <a href="#" class="text-decoration-none text-dark btn"  style="background-color:#CFD2CF ;">
-      <i class="bi bi-eye-fill fw-700"></i>
-    </a>
-  </div>
+<!-- Navbar start -->
+<div class="col-12 bg-light d-flex align-items-center justify-content-around " style="max-height:7vh;height: 7vh;">
+<!-- Home -->
+<a href="#">
+  <i class="bi bi-house btn" style="background-color:#CFD2CF ;" ></i>
+</a>
+<!-- Events -->
+<a href="">
+  <i class="bi bi-calendar-event btn" style="background-color:#CFD2CF ;" ></i>
+</a>
+<!-- Secrets -->
+<a href="#">
+  <i class="bi bi-file-earmark-lock2 btn" style="background-color:#CFD2CF ;" ></i>
+</a>
+<!-- Add spitz -->
+<a href="#">
+  <i class="bi bi-pen btn" style="background-color:#CFD2CF ;" ></i>
+</a>
+<!-- Review -->
+ <a href="#">
+  <i class="bi bi-eye-fill btn" style="background-color:#CFD2CF ;" ></i>
+ </a>
+ <!-- end -->
 </div>
-<!-- menu end -->
-</div>
-<!-- bottom nav end -->
+<!-- Navbar end -->
 </section>
 <!-- Small Screen Ui End -->
 {% endblock %}

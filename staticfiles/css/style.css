@@ -1,0 +1,10 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --red: #8E0000;
+    --pink: #FFA9A8;
+    --blue: #8AB2B2;
+}

@@ -1,7 +1,29 @@
-import imp
 from django.shortcuts import render
-from django.http import HttpResponse
+from .models import *
 
-# Create your views here.
+
 def home(request):
-    return HttpResponse("Hello Spitz team, everything setup")
+    context = {}
+    return render(request,'pages/index.html',context)
+
+def detail_spitz(request):
+    context = {}
+    return render(request,'pages/spitz-detail.html',context)
+
+def profile(request):
+    context = {}
+    return render(request,'pages/profile.html',context)
+
+
+def notification(request):
+    context = {}
+    return render(request,'pages/notify.html',context)
+    
+def review(request):
+    context = {}
+    return render(request,'pages/review.html',context)
+
+def settings(request):
+    context = {}
+    return render(request,'pages/settings.html',context)
+

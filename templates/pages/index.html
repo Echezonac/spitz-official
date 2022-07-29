@@ -140,7 +140,7 @@ secret, review, social,network, chat, data{% endblock %}
         </a>
       </li>
       <li class="my-3 px-3">
-        <a href="#" class="mx-auto btn btn-outline-dark text-decoration-none">
+        <a href="{% url 'logout' %}" class="mx-auto btn btn-outline-dark text-decoration-none">
           <i class=" mx-1 bi bi-box-arrow-right"></i>
           Logout
         </a>
@@ -461,7 +461,7 @@ secret, review, social,network, chat, data{% endblock %}
 </section>
 <!-- Large and Medium Screen UI End -->
 <!-- Small Screen Ui Start -->
-<section class="row" style="max-height: 100vh !important;height: 100vh !important; background-color: #CFD2CF;">
+<section class="row d-block d-md-none" style="max-height: 100vh !important;height: 100vh !important; background-color: #CFD2CF;">
   <!-- header start -->
   <div class="col-12 bg-light d-flex align-items-center justify-content-around px-3"
     style="max-height:7vh ;height: 7vh; ">

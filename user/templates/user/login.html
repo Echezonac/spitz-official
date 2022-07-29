@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main %}
+<div class="py-5 px-3 px-md-5 bg-white container-center">
+    <div class="col-12 col-lg-10 mx-auto">
+        <h3 class="mb-3"><b>SPITZ</b></h3>
+        <div class="py-4 form-holder col-11 col-md-6 col-lg-4 mx-auto">
+            <h1 class="text-start text-md-center mb-4"><b>Welcome</b></h1>
+            <form action="" method="post">
+                {% csrf_token %}
+                {{form}}
+                <div class="text-end mb-3">
+                    <a href="#" class="text-decoration-none">Forgot Password?</a>
+                </div>
+                <button type="submit" class="btn col-12 text-white fs-6 mb-3 rounded-0">Sign In</button>
+            </form>
+            <p class="text-dark text-center">Don't have an account? <a href="{% url 'signup' %}" class="text-decoration-none">Sign Up</a></p>
+        </div>
+    </div>
+</div>
+
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;500&display=swap');
+
+    * {
+        font-family: 'Poppins', sans-serif;
+        overflow: hidden;
+    }
+
+    :root {
+        --red: #8E0000;
+        --pink: #FFA9A8;
+        --blue: #8AB2B2;
+        --lightblack: #555;
+    }
+
+    .row {
+        background: var(--red);
+        height: fit-content;
+    }
+
+    p {
+        color: var(--pink);
+        font-weight: 200;
+    }
+
+    a{
+        font-weight: 200;
+    }
+
+    .container-center {
+        height: 100vh;
+    }
+
+    .form-holder {
+        min-height: fit-content;
+        border-radius: 30px 0 0 30px;
+    }
+
+    .form-holder h1 {
+        color: var(--lightblack);
+    }
+
+    .form-holder form input {
+        color: var(--lightblack);
+        box-shadow: none !important;
+    }
+
+    .form-holder form input::placeholder {
+        color: #ddd;
+    }
+
+    .form-holder form button {
+        background: var(--red);
+    }
+    .form-holder form button:hover{
+        color: black !important;
+    }
+
+    @media screen and (max-width: 767px) {
+        .form-holder {
+            border-radius: 0;
+            min-height: 100vh;
+        }
+    }
+</style>
+
+
+<script>
+    $("input").addClass("form-control form-control-sm col-12 mb-3 border-0 bg-light p-2")
+</script>
+{% endblock main %}

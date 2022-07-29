@@ -32,7 +32,7 @@ def signup(request):
     return render(request, 'user/signup.html', context)
 
 
-def login(request):
-    context ={}
+def logout(request):
+    auth.logout(request)
     
-    return render(request, 'user/login.html', context)
+    return redirect('login')

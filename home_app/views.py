@@ -1,14 +1,25 @@
 from django.shortcuts import render
-from .models import *
+from .models import Post
+from django.views.generic import ListView,DetailView,CreateView,UpdateView
 
+class HomeView(ListView):
+    model = Post
+    template_name = 'pages/index.html'
+   
 
-def home(request):
-    context = {}
-    return render(request,'pages/index.html',context)
+class SpitDetailView(DetailView):
+    model = Post
+    template_name = 'pages/spitz-detail.html'
 
-def detail_spitz(request):
-    context = {}
-    return render(request,'pages/spitz-detail.html',context)
+class AddSpitView(CreateView):
+    model = Post
+    template_name = 'pages/add-spit.html'
+    fields = '__all__'
+
+class UpdateSpitView(UpdateView):
+    model = Post
+    template_name = 'pages/update-spit.html'
+    fields = '__all__'
 
 def profile(request):
     context = {}

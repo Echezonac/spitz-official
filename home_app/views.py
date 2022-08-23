@@ -18,10 +18,7 @@ def profile(request):
 def notification(request):
     context = {}
     return render(request,'pages/notify.html',context)
-    
-def review(request):
-    context = {}
-    return render(request,'pages/review.html',context)
+
 
 def settings(request):
     context = {}

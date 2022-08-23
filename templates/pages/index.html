@@ -128,7 +128,7 @@ secret, review, social,network, chat, data{% endblock %}
         </a>
       </li>
       <li class="my-3 px-3">
-        <a href="{% url 'review-page' %}" class="mx-auto btn btn-outline-dark text-decoration-none">
+        <a href="{% url 'reviews' %}" class="mx-auto btn btn-outline-dark text-decoration-none">
           <i class=" mx-1 bi bi-eye-fill"></i>
           Review
         </a>
@@ -489,6 +489,9 @@ secret, review, social,network, chat, data{% endblock %}
         <a href="{% url 'notify-page' %}" class="btn">
           <i class="bi bi-bell text-dark"></i>
         </a>
+        <a href="{% url 'setting-page' %}" class="btn">
+          <i class="bi bi-sliders text-dark"></i>
+        </a>
       </div>
     </div>
   </div>
@@ -696,7 +699,7 @@ secret, review, social,network, chat, data{% endblock %}
   <div class="col-12 bg-white d-flex justify-content-around text-center sticky-bottom"
     style="height: fit-content; box-shadow: 0 0 3px #e5e5e5;">
     <!-- Home -->
-    <a href="#" class="px-2 py-1 text-center">
+    <a href="{% url 'home_page' %}" class="px-2 py-1 text-center">
       <i class="bi bi-house btn text-center"></i>
     </a>
     <!-- Events -->
@@ -712,7 +715,7 @@ secret, review, social,network, chat, data{% endblock %}
       <i class="bi bi-pen btn text-center"></i>
     </a>
     <!-- Review -->
-    <a href="#" class="px-2 py-1 text-center">
+    <a href="{% url 'reviews' %}" class="px-2 py-1 text-center">
       <i class="bi bi-eye-fill btn text-center"></i>
     </a>
     <!-- end -->

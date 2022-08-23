@@ -1,1 +1,16 @@
-<h1>Setting page</h1>
+{% extends 'base.html' %}
+
+
+{% block main %}
+<section class="d-block d-md-flex">
+    <!-- SIDENAV -->
+    {% include 'partials/sidenav.html' %}
+
+    <div class="col bg-light">
+        <!-- HEADER -->
+        {% include 'partials/header.html' %}
+        <h1>...</h1>
+    </div>
+
+</section>
+{% endblock main %}

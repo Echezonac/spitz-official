@@ -1,0 +1,87 @@
+<!-- LARGE SCREEN HEADER -->
+<div class="main_section_header col-12 bg-white d-none d-md-flex align-items-center justify-content-between py-2 px-lg-5 px-md-3 fixed-top"
+    style="right: 0; left: auto;">
+    <!-- page title start -->
+    <span class="heading">{{page_name}}</span>
+    <!-- page title end -->
+    <!-- menu start -->
+    <div class="navbar-menu d-flex align-items-center">
+        <!-- notification start -->
+        <a href="{% url 'notify-page' %}" class="btn">
+            <i class="bi bi-bell text-dark"></i>
+        </a>
+        <!-- notification end -->
+        <!-- search bar start -->
+        <div class="search-input-box mx-4 px-3 py-2">
+            <i class="bi bi-search"></i>
+            <input type="search" name="" id="searchinput" placeholder="Search">
+        </div>
+        <!-- search bar end -->
+        <div class="user-profile py-1 px-2">
+            <a href="{% url 'profile-page' %}" class="text-decoration-none text-dark">
+                <i class="bi  bi-person-circle"></i>
+            </a>
+        </div>
+    </div>
+    <!-- menu end -->
+</div>
+<div class="spacer py-2 d-none d-md-block"></div>
+
+
+<!-- SMALL SCREEN HEADER -->
+<div
+    class="col-12 bg-light d-flex d-md-none align-items-center justify-content-around bg-white px-3 sticky-top shadow-sm">
+    <div class="row">
+        <!-- profile start -->
+        <div class="d-flex align-items-center justify-content-center" style="width: fit-content;">
+            <a href="{% url 'profile-page' %}" class="text-decoration-none text-dark btn">
+                <i class="bi  bi-person-circle"></i>
+            </a>
+        </div>
+        <!-- search bar -->
+        <div class="col d-flex align-items-center justify-content-center">
+            <div class="search-input-box px-2 py-1" style="width: 100%;">
+                <i class="bi bi-search"></i>
+                <input type="search" name="" id="searchinput" placeholder="Search" style="width: 80% !important; ;">
+            </div>
+        </div>
+        <!-- notification -->
+        <div class="d-flex align-items-center justify-content-center" style="width: fit-content;">
+            <a href="{% url 'notify-page' %}" class="btn">
+                <i class="bi bi-bell text-dark"></i>
+            </a>
+            <a href="{% url 'setting-page' %}" class="btn">
+                <i class="bi bi-sliders text-dark"></i>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    $(".main_section_header").css("width", "calc(100vw - 8.3vw - 6rem)")
+    $(".spacer").height($(".main_section_header").height())
+</script>
+
+<style>
+    .bi-person-circle {
+        font-size: 30px;
+    }
+
+    .search-input-box {
+        border-radius: 8px;
+        background-color: #CFD2CF;
+    }
+
+    .search-input-box input {
+        border: none;
+        outline: none;
+        background-color: #CFD2CF;
+    }
+
+    .user-profile {
+        width: fit-content;
+        height: fit-content;
+        border-radius: 50%;
+    }
+</style>

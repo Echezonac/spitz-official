@@ -2,5 +2,15 @@
 
 
 {% block main %}
-<h1>Hello</h1>
+<section class="d-block d-md-flex">
+    <!-- SIDENAV -->
+    {% include 'partials/sidenav.html' %}
+
+    <div class="col bg-light">
+        <!-- HEADER -->
+        {% include 'partials/header.html' %}
+        <h1>Hey</h1>
+    </div>
+
+</section>
 {% endblock main %}

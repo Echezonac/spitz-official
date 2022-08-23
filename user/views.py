@@ -16,16 +16,16 @@ def signup(request):
         if password1 == password2:
             if User.objects.filter(email=email).exists() or User.objects.filter(username=username).exists():
                 messages.error(request, "Username or email already exists")
-                return redirect('register')
+                return redirect('signup')
             else:
                 user = User.objects.create_user(
                     username=username, first_name=first_name, last_name=last_name, email=email, password=password1)
                 auth.login(request, user)
                 messages.success(request, "You have registered successfully")
-                return redirect('login')
+                return redirect('home_page')
         else:
             messages.error(request, "Passwords do not match")
-            return redirect('register')
+            return redirect('signup')
         
     context = {}
     

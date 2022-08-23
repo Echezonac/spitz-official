@@ -1,0 +1,103 @@
+<!-- sidebar start -->
+<div class="col-lg-2 col-md-3 bg-white sidebar d-none d-md-block" style="max-height:100vh !important;">
+    <ul class="p-0 py-4" style="width: 100%;height: inherit !important;">
+        <!-- brand name start -->
+        <li class="mx-auto ps-5">
+            <a href="{% url 'home_page' %}" class="d-block mx-auto heading mb-5 text-start">
+                SPITZ
+            </a>
+        </li>
+        <!-- brand name end -->
+        <!-- sidebar menu start -->
+        <li class="my-3 px-3">
+            <a href="{% url 'home_page' %}" class=" mx-auto btn btn-outline-dark text-decoration-none">
+                <i class=" mx-1 bi bi-house"></i>
+                Home
+            </a>
+        </li>
+        <li class="my-3 px-3">
+            <a href="#" class="mx-auto btn btn-outline-dark text-decoration-none">
+                <i class=" mx-1 bi bi-calendar-event"></i>
+                Events
+            </a>
+        </li>
+        <li class="my-3 px-3">
+            <a href="#" class="mx-auto btn btn-outline-dark text-decoration-none">
+                <i class=" mx-1 bi bi-file-earmark-lock2"></i>
+                Secret
+            </a>
+        </li>
+        <li class="my-3 px-3">
+            <a href="#" class="mx-auto btn btn-outline-dark text-decoration-none">
+                <i class=" mx-1 bi bi-pen"></i>
+                Spitz
+            </a>
+        </li>
+        <li class="my-3 px-3">
+            <a href="{% url 'reviews' %}" class="mx-auto btn btn-outline-dark text-decoration-none">
+                <i class=" mx-1 bi bi-eye-fill"></i>
+                Review
+            </a>
+        </li>
+        <li class="my-3 px-3">
+            <a href="{% url 'setting-page' %}" class="mx-auto btn btn-outline-dark text-decoration-none">
+                <i class=" mx-1 bi bi-sliders"></i>
+                Settings
+            </a>
+        </li>
+        <li class="my-3 px-3">
+            <a href="{% url 'logout' %}" class="mx-auto btn btn-outline-dark text-decoration-none">
+                <i class=" mx-1 bi bi-box-arrow-right"></i>
+                Logout
+            </a>
+        </li>
+        <!-- sidebar menu end -->
+    </ul>
+</div>
+<!-- sidebar end -->
+
+<!-- SMALL SCREEN NAVBAR START -->
+<div class="col-12 bg-white d-flex d-md-none justify-content-evenly text-center fixed-bottom px-2"
+    style="height: fit-content; box-shadow: 0 0 3px #e5e5e5;">
+    <!-- Home -->
+    <a href="{% url 'home_page' %}" class="px-2 py-1 text-center">
+        <i class="bi bi-house btn btn-outline-dark border-0 text-center"></i>
+    </a>
+    <!-- Events -->
+    <a href="#" class="px-2 py-1 text-center">
+        <i class="bi bi-calendar-event btn btn-outline-dark border-0 text-center"></i>
+    </a>
+    <!-- Secrets -->
+    <a href="#" class="px-2 py-1 text-center">
+        <i class="bi bi-file-earmark-lock2 btn btn-outline-dark border-0 text-center"></i>
+    </a>
+    <!-- Add spitz -->
+    <a href="#" class="px-2 py-1 text-center">
+        <i class="bi bi-pen btn btn-outline-dark border-0 text-center"></i>
+    </a>
+    <!-- Review -->
+    <a href="{% url 'reviews' %}" class="px-2 py-1 text-center">
+        <i class="bi bi-eye-fill btn btn-outline-dark border-0 text-center"></i>
+    </a>
+    <!-- end -->
+</div>
+<!-- SMALL SCREEN NAVBAR END -->
+
+<style>
+    .btn {
+        display: block !important;
+        text-align: start;
+        width: fit-content !important;
+        border: none;
+    }
+
+    .sidebar a.btn {
+        width: 80% !important;
+    }
+
+    .btn-outline-dark:hover {
+        outline: none !important;
+        box-shadow: none !important;
+        background-color: var(--red-color) !important;
+    }
+</style>

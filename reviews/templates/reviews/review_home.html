@@ -1,16 +1,163 @@
 {% extends 'base.html' %}
-
+{% load static %}
 
 {% block main %}
 <section class="d-block d-md-flex col-12">
     <!-- SIDENAV -->
     {% include 'partials/sidenav.html' %}
 
-    <div class="col bg-light">
+    <div class="col bg-light overflow-y-auto" style="height: 100vh !important;">
         <!-- HEADER -->
         {% include 'partials/header.html' %}
-        <h1>...</h1>
+        
+        <div class="review_filters p-3 d-flex bg-light mw-100">
+            <a href="#" class="btn rounded-pill btn-sm text-secondary px-2 px-md-3 me-2">All</a>
+            <a href="#" class="btn rounded-pill btn-sm text-secondary px-2 px-md-3 me-2">Organizations</a>
+            <a href="#" class="btn rounded-pill btn-sm text-secondary px-2 px-md-3 me-2">Places</a>
+            <a href="#" class="btn rounded-pill btn-sm text-secondary px-2 px-md-3 me-2">Products</a>
+            <a href="#" class="btn btn-sm text-dark rounded-pill ms-auto"><i class="fas fa-plus">+</i></a>
+        </div>
+
+        <!-- TRENDING TOPICS -->
+        <section class="trending_topics p-3">
+            <h3 class="overflow-hidden">Trending Topics</h3>
+            <!-- TRENDING CARDS WRAPPER -->
+            <div class="d-flex col-12 overflow-auto topics py-3">
+                
+                <!-- TRENDING TOPICS CARDS -->
+                <div class="col-10 col-md-7 col-lg-4 card border-0 shadow-sm me-3">
+                    <div class="d-flex">
+                        <div class="d-flex justify-content-center align-items-center col-4 h-100" style="overflow: hidden;">
+                            <img src="{% static 'img/bg04.jpg' %}" alt="" style="min-width: 100%; min-height: 100%;">
+                        </div>
+                        <div class="card-body p-2 p-md-3">
+                            <h5 class="overflow-hidden">Tesla 2009</h5>
+                            <p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing... <a href="#" class="text-decoration-none">Read more.</a></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- MOST SEARCHED TOPICS -->
+        <section class="most_searched_topics py-3">
+            <h3 class="overflow-hidden px-3">Most Searched Topics</h3>
+
+            <!-- MOST SEARCHED TOPICS WRAPPER -->
+            <div class="col-12 most_searched pb-5 d-flex flex-wrap">
+
+                <!-- MOST SEARCHED TOPICS CARDS -->
+                <div class="col-12 col-lg-6 px-3 mt-3">
+                    <div class="card border-0 shadow-sm col-12">
+                        <div class="d-flex">
+                            <div class="d-flex justify-content-center align-items-center col-4 h-100" style="overflow: hidden;">
+                                <img src="{% static 'img/bg04.jpg' %}" alt="" style="min-width: 100%; min-height: 100%;">
+                            </div>
+                            <div class="card-body p-2 p-md-3">
+                                <h5 class="overflow-hidden">Tesla 2009</h5>
+                                <p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing... <a href="#" class="text-decoration-none">Read more.</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- TODO: SETUP PAGINATION -->
+            <nav style="background: none !important;" aria-label="Page navigation example">
+                <ul class="pagination my-5 py-2">
+                    {% if vehicles.has_previous %}
+                    <li class="page-item p-2">
+                        <a class="page-link border-0 text-dark" href="?page=1" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item p-2">
+                        <a class="page-link border-0 text-dark" href="?page={{vehicles.previous_page_number}}" aria-label="Previous">
+                            <span aria-hidden="true"></span></a>
+                    </li>
+                    {% else %}
+                    <li class="page-item p-2">
+                        <a class="page-link border-0 text-dark" href="?page=1" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item p-2">
+                        <a class="page-link border-0 text-dark" href="?page=1" aria-label="Previous">
+                            <span aria-hidden="true">
+                                <small><small><</small></small>
+                            </span>
+                        </a>
+                    </li>
+                    {% endif %}
+                    {% for page in pages %}
+                    <li class="page-item current">
+                        <a href="?page={{forloop.counter}}" class="page-link border-0 text-dark">
+                            {{forloop.counter}}
+                        </a>
+                    </li>
+                    {% endfor %}
+
+
+                    {% if vehicles.has_next %}
+                    <li class="page-item p-2">
+                        <a class="page-link border-0 text-dark" href="?page={{vehicles.next_page_number}}" aria-label="Previous">
+                            <span aria-hidden="true"><small><small>></small></small></span>
+                        </a>
+                    </li>
+                    <li class="page-item p-2">
+                        <a class="page-link border-0 text-dark" href="?page={{vehicles.paginator.num_pages}}" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                    {% else %}
+                    <li class="page-item p-2">
+                        <a class="page-link border-0 text-dark" href="?page={{vehicles.paginator.num_pages}}" aria-label="Previous">
+                            <span aria-hidden="true"><small><small>></small></small></span>
+                        </a>
+                    </li>
+                    <li class="page-item p-2">
+                        <a class="page-link border-0 text-dark" href="?page={{vehicles.paginator.num_pages}}" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </section>
+
     </div>
 
 </section>
+
+
+<style>
+    .review_filters a{
+        background-color: rgba(230, 230, 230);
+        width: fit-content !important;
+    }
+    .review_filters a:hover{
+        color: var(--red-color) !important;
+        background-color: rgba(240, 240, 240) !important;
+    }
+    .topics::-webkit-scrollbar{
+        height: 4px;
+    }
+    .pagination{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0 !important;
+    }
+    .pagination .page-item .page-link{
+        box-shadow: 2px 2px 0px 0px #ccc;
+        transition: .2s;
+    }
+    .pagination .page-item .page-link:hover{
+        color: white !important;
+        background: var(--red-color) !important;
+    }
+</style>
 {% endblock main %}

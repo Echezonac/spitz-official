@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+<title>{% block title %}Home - spitz- www.spitz.com{% endblock %}</title>
+{% block description %}Spitz is a microblogging and social networking platform on which users post event, secret and
+reviews on products, individuals, organisation and location anonymously. The identity of it's users are private and
+ensure that only real and active users stay on the platform.{% endblock %}
+{% block keywords %}home, users, spitz, location, stay, active, real, only, ensure, private, identity, blog,event,
+secret, review, social,network, chat, data{% endblock %}
+{% block main %}
+<section class="row my-5 mx-auto">
+    <form action="" method="post">
+        {% csrf_token %}
+        <p class="text-center text-danger">Are you sure you want to delete this post ?</p>
+        <input type="submit" value="Delete" class="btn btn-danger">
+    </form>
+</section>
+{% endblock %}

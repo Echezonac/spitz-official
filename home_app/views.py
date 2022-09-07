@@ -1,21 +1,33 @@
 from django.shortcuts import render
-from .models import *
+from django.views.generic import ListView,DetailView,CreateView,UpdateView,DeleteView
+from django.urls import reverse_lazy
+from .models import Post
 
 
-def home(request):
 
-    context = {
-        'page_name': 'Home',  # Name of the current page,
-    }
-    return render(request, 'pages/index.html', context)
+class HomeView(ListView):
+    model = Post
+    template_name = 'pages/index.html'
+    
 
+class DetailPostView(DetailView):
+    model = Post
+    template_name = 'pages/spitz-detail.html'
 
-def detail_spitz(request):
-    context = {
-        'page_name': 'Spitz',  # Name of the current page,
-    }
-    return render(request, 'pages/spitz-detail.html', context)
+class CreatePostView(CreateView):
+    model = Post
+    template_name = 'pages/create_post.html'
+    fields = ["body","author"]
 
+class UpdatePostView(UpdateView):
+    model = Post
+    template_name = 'pages/update_post.html'
+    fields = ['body']
+
+class DeletePostView(DeleteView):
+    model = Post
+    template_name = 'pages/delete_post.html'
+    success_url = reverse_lazy('home_page')
 
 def profile(request):
     context = {

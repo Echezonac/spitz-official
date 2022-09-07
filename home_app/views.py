@@ -4,6 +4,7 @@ from django.urls import reverse_lazy
 from .models import Post
 
 
+
 class HomeView(ListView):
     model = Post
     template_name = 'pages/index.html'
@@ -29,19 +30,21 @@ class DeletePostView(DeleteView):
     success_url = reverse_lazy('home_page')
 
 def profile(request):
-    context = {}
-    return render(request,'pages/profile.html',context)
+    context = {
+        'page_name': 'Profile',  # Name of the current page,
+    }
+    return render(request, 'pages/profile.html', context)
 
 
 def notification(request):
-    context = {}
-    return render(request,'pages/notify.html',context)
-    
-def review(request):
-    context = {}
-    return render(request,'pages/review.html',context)
+    context = {
+        'page_name': 'Notifications',  # Name of the current page,
+    }
+    return render(request, 'pages/notify.html', context)
+
 
 def settings(request):
-    context = {}
-    return render(request,'pages/settings.html',context)
-
+    context = {
+        'page_name': 'Settings',  # Name of the current page
+    }
+    return render(request, 'pages/settings.html', context)

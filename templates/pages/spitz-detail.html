@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-<title>{% block title %}Home - spitz- www.spitz.com{% endblock %}</title>
+<title>{% block title %}Detail_Page - spitz- www.spitz.com{% endblock %}</title>
 {% block description %}Spitz is a microblogging and social networking platform on which users post event, secret and
 reviews on products, individuals, organisation and location anonymously. The identity of it's users are private and
 ensure that only real and active users stay on the platform.{% endblock %}
@@ -8,74 +8,31 @@ ensure that only real and active users stay on the platform.{% endblock %}
 secret, review, social,network, chat, data{% endblock %}
 {% block main %}
 <style>
-  .btn {
-    display: block !important;
-    text-align: start;
-    width: fit-content !important;
-    border: none;
-  }
-
-  .sidebar a.btn {
-    width: 80% !important;
-  }
-
-  .btn-outline-dark:hover {
-    outline: none !important;
-    box-shadow: none !important;
-    background-color: var(--red-color) !important;
-  }
-
   .btnx {
     background-color: #8d0000 !important;
     color: white !important;
 
   }
-
-  .search-input-box {
-    border-radius: 8px;
-    background-color: #CFD2CF;
-  }
-
-  .search-input-box input {
-    border: none;
-    outline: none;
-    background-color: #CFD2CF;
-  }
-
-  .user-profile {
-    width: fit-content;
-    height: fit-content;
-  border-radius: 50%;
-  }
-
-  .bi-person-circle {
-    font-size: 30px;
-  }
-
   @media (max-width:991px) {
     .spitz-lg-ads {
       display: none !important;
     }
   }
-
   @media (max-width:767px) {
     .spitz-large-medium-screen {
       display: none;
     }
   }
-
   @media (min-width:768px) {
     .spitz-small-screen {
       display: none;
     }
   }
-
   p {
     font-family: var(--font1);
     font-size: small;
     text-align: justify;
   }
-
   .ads-box {
     width: 100%;
     height: 500px;
@@ -83,118 +40,30 @@ secret, review, social,network, chat, data{% endblock %}
     margin-top: 6px;
     background-color: #CFD2CF;
   }
-
   .ads-container {
     width: 80%;
   }
-
-  /* testing */
 </style>
+
+{% if user.is_authenticated %}
 <!-- Large and Medium Screen UI Start -->
 <section class="row spitz-large-medium-screen" style="max-height: 100vh !important; height: 100vh !important;">
-  <!-- sidebar start -->
-  <div class="col-lg-2 col-md-3 bg-white sidebar" style="max-height:100vh !important;">
-    <ul class="p-0 py-4" style="width: 100%;height: inherit !important;">
-      <!-- brand name start -->
-      <li class="mx-auto ps-5">
-        <a href="{% url 'home_page' %}" class="d-block mx-auto heading mb-5 text-start">
-          SPITZ
-        </a>
-      </li>
-      <!-- brand name end -->
-      <!-- sidebar menu start -->
-      <li class="my-3 px-3">
-        <a href="{% url 'home_page' %}" class=" mx-auto btn btn-outline-dark text-decoration-none">
-          <i class=" mx-1 bi bi-house"></i>
-          Home
-        </a>
-      </li>
-      <li class="my-3 px-3">
-        <a href="#" class="mx-auto btn btn-outline-dark text-decoration-none">
-          <i class=" mx-1 bi bi-calendar-event"></i>
-          Events
-        </a>
-      </li>
-      <li class="my-3 px-3">
-        <a href="#" class="mx-auto btn btn-outline-dark text-decoration-none">
-          <i class=" mx-1 bi bi-file-earmark-lock2"></i>
-          Secret
-        </a>
-      </li>
-      <li class="my-3 px-3">
-        <a href="{% url 'new_post' %}" class="mx-auto btn btn-outline-dark text-decoration-none">
-          <i class=" mx-1 bi bi-pen"></i>
-          Spitz
-        </a>
-      </li>
-      <li class="my-3 px-3">
-        <a href="{% url 'review-page' %}" class="mx-auto btn btn-outline-dark text-decoration-none">
-          <i class=" mx-1 bi bi-eye-fill"></i>
-          Review
-        </a>
-      </li>
-      <li class="my-3 px-3">
-        <a href="{% url 'setting-page' %}" class="mx-auto btn btn-outline-dark text-decoration-none">
-          <i class=" mx-1 bi bi-sliders"></i>
-          Settings
-        </a>
-      </li>
-      <li class="my-3 px-3">
-        <a href="{% url 'logout' %}" class="mx-auto btn btn-outline-dark text-decoration-none">
-          <i class=" mx-1 bi bi-box-arrow-right"></i>
-          Logout
-        </a>
-      </li>
-      <!-- sidebar menu end -->
-    </ul>
-  </div>
-  <!-- sidebar end -->
-  <!-- main section start -->
-  <div class="col-lg-10 col-md-9" style="max-height:100vh !important;">
+  {% comment %} header start {% endcomment %}
+   {% include 'partials/header.html' %}
+   <div class="spacer py-2 d-none d-md-block" style="height:100px;"></div>
+  {% comment %} header end {% endcomment %}
+  {% comment %} blog body start {% endcomment %}
+  <div class="col-12 bg-light">
     <div class="row">
-      <!-- navbar start -->
-      <div
-        class="main_section_header col-12 bg-white d-flex align-items-center justify-content-between py-4 px-lg-5 px-md-3 fixed-top"
-        style="right: 0; left: auto;">
-        <!-- page title start -->
-         <a href="{% url 'home_page'  %}" class="d-block heading">
-          <i class="bi bi-arrow-left-square-fill"></i>
-        </a>
-        {% comment %} <p class="heading">{{}}</p> {% endcomment %}
-        <!-- page title end -->
-        <!-- menu start -->
-        <div class="navbar-menu d-flex align-items-center">
-          <!-- notification start -->
-          <a href="{% url 'notify-page' %}" class="btn">
-            <i class="bi bi-bell text-dark"></i>
-          </a>
-          <!-- notification end -->
-          <!-- search bar start -->
-          <div class="search-input-box mx-4 px-3 py-2">
-            <i class="bi bi-search"></i>
-            <input type="search" name="" id="searchinput" placeholder="Search">
-          </div>
-          <!-- search bar end -->
-          <div class="user-profile py-1 px-2">
-            <a href="{% url 'profile-page' %}" class="text-decoration-none text-dark">
-              <i class="bi  bi-person-circle"></i>
-            </a>
-          </div>
-        </div>
-        <!-- menu end -->
-      </div>
-      <!-- navbar end -->
-      <!-- content start -->
-      <div class="col-12">
-        <!-- content body start -->
-        <div class="row bg-light">
-          <div class="spacer"></div>
-          <!-- spitz body start -->
-          <div class="col-lg-12 col-md-12" style="height: fit-content;">
-            <!-- spitz-body-start 1-->
-            <div class="row" style="overflow-y:auto;">
-              <!-- spitz-col start -->
-                <div class="col-12 py-4">
+      {% comment %} sidenav start {% endcomment %}
+      {% include 'partials/sidenav.html' %}
+      {% comment %} sidenav end {% endcomment %}
+      {% comment %} main side start {% endcomment %}
+      {% comment %} spitz container start {% endcomment %}
+      <div class="col-lg-9 col-md-9 bg-light" style="max-height: 100vh;">
+        <div class="row" style="overflow-y:auto !important;z-index: 1500;">
+            <!-- spitz-col start -->
+    <div class="col-12 py-4">
                 <div  class="row p-3 spitz-box mx-auto bg-white rounded-3 shadow-sm"
                   style="width: 80%; height: fit-content; text-decoration: none;">
                   <!-- spitz-side bar start -->
@@ -240,55 +109,28 @@ secret, review, social,network, chat, data{% endblock %}
                   </div>
                 </div>
               </div>
-              <!-- spitz-col end -->
-            </div>
-            <!-- spitz-body-end  1-->
-          </div>
-          <!-- spitz body end -->
+<!-- spitz-col end -->
         </div>
-        <!-- content body end -->
       </div>
-      <!-- content end -->
+      {% comment %} spitz container end {% endcomment %}
+      {% comment %} main side end {% endcomment %}
     </div>
   </div>
-  <!-- main section end -->
+  {% comment %} blog body end {% endcomment %}
 </section>
 <!-- Large and Medium Screen UI End -->
-
 <!-- Small Screen Ui Start -->
 <section class="row d-block d-md-none bg-light" style="max-height: 100vh !important;height: 100vh !important;">
-
   <!-- header start -->
-  <div class="col-12 bg-light d-flex align-items-center justify-content-around bg-white px-3 sticky-top shadow-sm">
-    <div class="row">
-      <!-- profile start -->
-      <div class="d-flex align-items-center justify-content-center" style="width: fit-content;">
-        <a href="{% url 'profile-page' %}" class="text-decoration-none text-dark">
-          <i class="bi  bi-person-circle"></i>
-        </a>
-      </div>
-      <!-- search bar -->
-      <div class="col ms-1 d-flex align-items-center justify-content-center">
-        <div class="search-input-box px-2 py-1" style="width: 100%;">
-          <i class="bi bi-search"></i>
-          <input type="search" name="" id="searchinput" placeholder="Search" style="width: 80% !important; ;">
-        </div>
-      </div>
-      <!-- notification -->
-      <div class="d-flex align-items-center justify-content-center" style="width: fit-content;">
-        <a href="{% url 'notify-page' %}" class="btn">
-          <i class="bi bi-bell text-dark"></i>
-        </a>
-      </div>
-    </div>
-  </div>
+  {% include 'partials/header.html' %}
   <!-- header end -->
-
   <!-- content start -->
   <div class="col-12" style="min-height: 86vh;" style="position:relative ; z-index: -10;">
     <!-- spitz-body-start -->
     <div class="row px-2" style="overflow-y:auto ;">
+  
       <!-- spitz-col start -->
+        <!-- spitz-col start -->
       <div class="col-12 my-3" style="border-radius: p0px;">
         <div class="row p-3 spitz-box mx-auto bg-white rounded-3 shadow-sm"
           style="width: 100%; height: fit-content; text-decoration: none;">
@@ -313,16 +155,23 @@ secret, review, social,network, chat, data{% endblock %}
               <img src="{% static 'img/blog-img.jpg' %}" class="d-block w-100" alt=""
                 style="max-height: fit-content; border-radius: 10px;">
             </div>
-            <!-- spitz-blog-icon start -->
-            <div class="spitz-blog-icon pt-3 px-2 d-flex justify-content-around">
-              <i class="bi bi-chat-left text-dark"></i>
-              <i class="bi bi-heart text-dark"></i>
-              <i class="bi bi-share text-dark"></i>
-            </div>
-            <!-- spitz-blog-icon end -->
+              <!-- spitz-blog-icon start -->
+                    <div class="spitz-blog-icon pt-3 px-2 d-flex justify-content-around align-items-center ">
+                      <i class="bi bi-chat-left text-dark me-4 d-block"></i>
+                      <i class="bi bi-heart text-dark me-4 d-block"></i>
+                      <a href="{% url 'post_edit' post.pk %}" class="d-block">
+                        <i class="bi bi-pencil-square text-dark me-4"></i>
+                      </a>
+                       <a href="{% url 'post_delete' post.pk %}" class="d-block">
+                         <i class="bi bi-trash text-danger me-4"></i>
+                      </a>
+                      <i class="bi bi-share text-dark d-block"></i>
+                    </div>
+                    <!-- spitz-blog-icon end -->
           </div>
         </div>
       </div>
+      <!-- spitz-col end -->
       <!-- spitz-col end -->
   
 
@@ -331,38 +180,21 @@ secret, review, social,network, chat, data{% endblock %}
   </div>
   <!-- content end -->
   <!-- Navbar start -->
-  <div class="col-12 bg-white d-flex justify-content-around text-center sticky-bottom"
-    style="height: fit-content; box-shadow: 0 0 3px #e5e5e5;">
-    <!-- Home -->
-    <a href="#" class="px-2 py-1 text-center">
-      <i class="bi bi-house btn text-center"></i>
-    </a>
-    <!-- Events -->
-    <a href="#" class="px-2 py-1 text-center">
-      <i class="bi bi-calendar-event btn text-center"></i>
-    </a>
-    <!-- Secrets -->
-    <a href="#" class="px-2 py-1 text-center">
-      <i class="bi bi-file-earmark-lock2 btn text-center"></i>
-    </a>
-    <!-- Add spitz -->
-    <a href="#" class="px-2 py-1 text-center">
-      <i class="bi bi-pen btn text-center"></i>
-    </a>
-    <!-- Review -->
-    <a href="#" class="px-2 py-1 text-center">
-      <i class="bi bi-eye-fill btn text-center"></i>
-    </a>
-    <!-- end -->
-  </div>
+  {% include 'partials/sidenav.html' %}
   <!-- Navbar end -->
 </section>
 <!-- Small Screen Ui End -->
+{% else %}
+<section class="row d-flex justify-content-center align-items-center bg-light" style="width:auto; max-height:100vh;height:100vh;">
+ <div style="width:fit-content; height:fit-content; ">
+  <span class-"text-dark" style="font-size:2em;text-align:center !important;font-weight:700;">Page Not Available</span>
+  <div>
+    <p class="text-dark text-center">Don't have an account? <a href="{% url 'signup' %}" class="text-decoration-none">Sign Up</a></p>
+    <p class="text-dark my-3 text-center">Already have an account? <a href="{% url 'login' %}" class="text-decoration-none">Login</a></p>
+  </div>
+ </div>
+</section>
+{% endif %}
 
 
-
-<script>
-  $(".main_section_header").css("width", "calc(100vw - 8.3vw - 6rem)")
-  $(".spacer").height($(".main_section_header").height())
-</script>
 {% endblock %}

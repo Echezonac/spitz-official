@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main %}
+<div class="col-lg-4 col-md-5 spitz-lg-ads mt-4">
+            <div class="ads-container mx-auto">
+              <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active" data-bs-interval="9000">
+                    <div class="ads-box">
+                      <p class="text-dark p-3">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos repellendus quo cumque at nulla
+                        atque rerum asperiores
+                        dolore reprehenderit, pariatur debitis iure harum est quisquam iusto magni dolorem ex eveniet!
+                      </p>
+                      <a href="#" class="text-decoration-none d-block">
+                        <img src="{% static 'img/blog-img.jpg' %}" class="d-block w-100" alt="ads-img"
+                          style="height:200px; z-index: 0;">
+                        <p class="px-3 text-success pt-1">www.ads.com</p>
+                        <p class="px-3 text-dark fw-bold text-uppercase">We sell not just drink but expression</p>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="carousel-item py-3" data-bs-interval="9000">
+                    <div class="ads-box">
+                      <p class="text-dark p-3">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos repellendus quo cumque at nulla
+                        atque rerum asperiores
+                        dolore reprehenderit, pariatur debitis iure harum est quisquam iusto magni dolorem ex eveniet!
+                      </p>
+                      <a href="#" class="text-decoration-none d-block">
+                        <img src="{% static 'img/bg04.jpg' %}" class="d-block w-100" alt="ads-img"
+                          style="height:200px; z-index: 0;">
+                        <p class="px-3 text-success pt-1">www.ads.com</p>
+                        <p class="px-3 text-dark fw-bold text-uppercase">We sell not just drink but expression</p>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+{% endblock %}

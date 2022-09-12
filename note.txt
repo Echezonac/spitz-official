@@ -1,20 +1,6 @@
+<p>
+    <label for="id_body">Body:</label>
+    <textarea name="body" cols="40" rows="10" required="" id="id_body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores a expedita libero nobis, illum debitis repudiandae provident recusandae ratione dolore ab optio, similique beatae nulla odio enim quam dolores esse commodi, eveniet dolorum? Aspernatur atque expedita earum mollitia illo accusantium, nisi qui laboriosam culpa facere magnam ipsa perferendis ea ipsum?</textarea> 
+</p>
 
-     
-      
-   
-
-     
-        
-          
-      
-            
-             
-             
-           
-        
-          
-         
-     
-       
-    
-
+  <input type="submit" value="Update" class="btn btn-dark">

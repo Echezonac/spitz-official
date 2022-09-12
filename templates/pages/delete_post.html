@@ -7,11 +7,23 @@ ensure that only real and active users stay on the platform.{% endblock %}
 {% block keywords %}home, users, spitz, location, stay, active, real, only, ensure, private, identity, blog,event,
 secret, review, social,network, chat, data{% endblock %}
 {% block main %}
-<section class="row my-5 mx-auto">
-    <form action="" method="post">
+{% if user.is_authenticated %}
+<section class="row d-flex justify-content-center align-items-center bg-light" style="width:auto; max-height:100vh;height:100vh;">
+ <form action="" method="post">
         {% csrf_token %}
-        <p class="text-center text-danger">Are you sure you want to delete this post ?</p>
-        <input type="submit" value="Delete" class="btn btn-danger">
+        <p class="text-center text-danger" style="font-size:2em;text-align:center !important;font-weight:700;">Are you sure you want to delete this post ?</p>
+        <input type="submit" value="Delete" class="btn btn-danger mx-auto">
     </form>
 </section>
+{% else %}
+<section class="row d-flex justify-content-center align-items-center bg-light" style="width:auto; max-height:100vh;height:100vh;">
+ <div style="width:fit-content; height:fit-content; ">
+  <span class-"text-dark" style="font-size:2em;text-align:center !important;font-weight:700;">Page Not Available</span>
+  <div>
+    <p class="text-dark text-center">Don't have an account? <a href="{% url 'signup' %}" class="text-decoration-none">Sign Up</a></p>
+    <p class="text-dark my-3 text-center">Already have an account? <a href="{% url 'login' %}" class="text-decoration-none">Login</a></p>
+  </div>
+ </div>
+</section>
+{% endif %}
 {% endblock %}

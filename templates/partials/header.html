@@ -1,8 +1,8 @@
 {% load active_link_tags %}
 
 <!-- LARGE SCREEN HEADER -->
-<div class="main_section_header col-12 bg-white d-none d-md-flex align-items-center justify-content-between py-2 px-lg-5 px-md-3 fixed-top"
-    style="right: 0; left: auto;">
+<div class="main_section_header col-12 bg-white d-none d-md-flex align-items-center justify-content-between align-items-center py-2 px-lg-5 px-md-3 fixed-top"
+    style="right: 0; left: auto;max-height:10vh !important;height:10vh;">
     <!-- page title start -->
     <span class="heading">{{page_name}}</span>
     <!-- page title end -->
@@ -27,7 +27,7 @@
     </div>
     <!-- menu end -->
 </div>
-<div class="spacer py-2 d-none d-md-block"></div>
+
 
 
 <!-- SMALL SCREEN HEADER -->
@@ -61,8 +61,8 @@
 
 
 <script>
-    $(".main_section_header").css("width", "calc(100vw - 8.3vw - 6rem)")
-    $(".spacer").height($(".main_section_header").height())
+    {% comment %} $(".main_section_header").css("width", "calc(100vw - 8.3vw - 6rem)")
+    $(".spacer").height($(".main_section_header").height()) {% endcomment %}
 </script>
 
 <style>

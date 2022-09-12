@@ -1,7 +1,7 @@
 {% load active_link_tags %}
 
 <!-- sidebar start -->
-<div class="col-lg-2 col-md-3 bg-white sidebar d-none d-md-block" style="max-height:100vh !important;">
+<div class="col-lg-2 col-md-3 bg-white sidebar d-none d-md-block" style="max-height:100vh !important;min-height:100vh;">
     <ul class="p-0 py-4" style="width: 100%;height: inherit !important;">
         <!-- brand name start -->
         <li class="mx-auto ps-5">
@@ -13,43 +13,43 @@
         <!-- sidebar menu start -->
         <li class="my-3 px-3">
             <a href="{% url 'home_page' %}" class=" mx-auto btn btn-outline-dark text-decoration-none {% active_link 'home_page' %}">
-                <i class=" mx-1 bi bi-house"></i>
+                <i class=" mx-1 bi bi-house sn"></i>
                 Home
             </a>
         </li>
         <li class="my-3 px-3">
             <a href="#" class="mx-auto btn btn-outline-dark text-decoration-none {% active_link '#' %}">
-                <i class=" mx-1 bi bi-calendar-event"></i>
+                <i class=" mx-1 bi bi-calendar-event sn"></i>
                 Events
             </a>
         </li>
         <li class="my-3 px-3">
             <a href="#" class="mx-auto btn btn-outline-dark text-decoration-none {% active_link '#' %}">
-                <i class=" mx-1 bi bi-file-earmark-lock2"></i>
+                <i class=" mx-1 bi bi-file-earmark-lock2 sn"></i>
                 Secret
             </a>
         </li>
         <li class="my-3 px-3">
             <a href="#" class="mx-auto btn btn-outline-dark text-decoration-none {% active_link '#' %}">
-                <i class=" mx-1 bi bi-pen"></i>
+                <i class=" mx-1 bi bi-pen sn"></i>
                 Spitz
             </a>
         </li>
         <li class="my-3 px-3">
             <a href="{% url 'reviews' %}" class="mx-auto btn btn-outline-dark text-decoration-none {% active_link 'reviews' %}">
-                <i class=" mx-1 bi bi-eye-fill"></i>
+                <i class=" mx-1 bi bi-eye-fill sn"></i>
                 Review
             </a>
         </li>
         <li class="my-3 px-3">
             <a href="{% url 'setting-page' %}" class="mx-auto btn btn-outline-dark text-decoration-none {% active_link 'setting-page' %}">
-                <i class=" mx-1 bi bi-sliders"></i>
+                <i class=" mx-1 bi bi-sliders sn"></i>
                 Settings
             </a>
         </li>
         <li class="my-3 px-3">
             <a href="{% url 'logout' %}" class="mx-auto btn btn-outline-dark text-decoration-none">
-                <i class=" mx-1 bi bi-box-arrow-right"></i>
+                <i class=" mx-1 bi bi-box-arrow-right sn"></i>
                 Logout
             </a>
         </li>
@@ -86,6 +86,17 @@
 <!-- SMALL SCREEN NAVBAR END -->
 
 <style>
+    
+  @media (max-width:1133px) {
+    .sn {
+      display: none;
+    }
+  }
+   @media (max-width:992px) {
+    .sn {
+      display: inline-flex;
+    }
+  }
     .btn {
         display: block !important;
         text-align: start;

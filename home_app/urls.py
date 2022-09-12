@@ -1,6 +1,6 @@
 import imp
 from django.urls import path
-from .views import DetailPostView, HomeView,profile,notification,settings,review,DetailPostView,CreatePostView,UpdatePostView,DeletePostView
+from .views import DetailPostView, HomeView,profile,notification,settings,DetailPostView,CreatePostView,UpdatePostView,DeletePostView
 
 
 urlpatterns = [
@@ -11,6 +11,5 @@ urlpatterns = [
     path('spitz/<int:pk>/edit/',UpdatePostView.as_view(), name ='post_edit'),
     path('profile/',profile,name="profile-page"),
     path('notify/',notification,name="notify-page"),
-    path('review/',review, name='review-page'),
     path('settings/',settings, name='setting-page')
 ] 

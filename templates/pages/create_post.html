@@ -47,7 +47,18 @@ secret, review, social,network, chat, data{% endblock %}
   .btnx {
     background-color: #8d0000 !important;
     color: white !important;
-
+  }
+  #id_body{
+    width:100%;
+    outline:none;
+    border:1px solid grey;
+    height: 200px;
+    border:none; 
+    padding: 8px;
+    background:none; 
+  }
+  label{
+    display:none !important;
   }
 </style>
 
@@ -68,19 +79,9 @@ secret, review, social,network, chat, data{% endblock %}
       {% comment %} spitz container start {% endcomment %}
       <div class="col-lg-6 col-md-9 d-flex  justify-content-center align-items-start bg-light" style="max-height: 100vh;">
         <!--add spitz-col start -->
-          <form class="row mx-auto mt-5 p-3 bg-white" action="" method="post" style="width:80%; height: inherit; box-shadow: 4px 8px 14px 0px rgba(0,0,0,0.75);">
+          <form class="row mx-auto mt-2 p-3 bg-white" action="" method="post" style="width:80%; height: inherit; box-shadow: 4px 8px 14px 0px rgba(0,0,0,0.75);">
                 {% csrf_token %}
-                <p>
-                  <textarea name="body" cols="40" rows="10" placeholder="Type something...." required="" id="id_body" style="width:100%;outline:none;border:1px solid grey;height: 350px; border:none;" class="p-4 bg-none "></textarea>
-              </p>
-              <p>
-                <select name="author" required="" id="id_author">
-                    <option value="" selected="">---------</option>
-                    <option value="1">west_J</option>
-                    <option value="2">Enadot</option>
-                    <option value="3">admin</option>
-                </select>
-              </p>
+                {{ form.as_p }}
                 <input type="submit" value="Spitz" class="btn btnx text-decoration-none">
           </form>
         <!--add spitz-col end -->
@@ -107,17 +108,7 @@ secret, review, social,network, chat, data{% endblock %}
       <!-- spitz-col start -->
       <form class="row mx-auto mt-5 p-3 bg-white" action="" method="post" style="width:80%; height: inherit; box-shadow: 4px 8px 14px 0px rgba(0,0,0,0.75);">
                 {% csrf_token %}
-                <p>
-                  <textarea name="body" cols="40" rows="10" placeholder="Type something...." required="" id="id_body" style="width:100%;outline:none;border:1px solid grey;height: 300px; border:none;" class="p-2 bg-none "></textarea>
-              </p>
-              <p>
-                <select name="author" required="" id="id_author">
-                    <option value="" selected="">---------</option>
-                    <option value="1">west_J</option>
-                    <option value="2">Enadot</option>
-                    <option value="3">admin</option>
-                </select>
-              </p>
+                {{ form.as_p }}
                 <input type="submit" value="Spitz" class="btn btnx text-decoration-none">
       </form>
       <!-- spitz-col end -->

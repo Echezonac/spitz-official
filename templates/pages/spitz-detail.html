@@ -78,9 +78,9 @@ secret, review, social,network, chat, data{% endblock %}
                       style="height:50px;width: 100%;">
                       <div class="d-flex justify-content-between align-items-center" style="height: fit-content;">
                         <small class="text-dark fw-bold fs-5">{{ object.author }}</small>
-                        <small class="px-2 text-secondary">2h</small>
+                        <small class="px-2 text-secondary">{{ object.post_date }}</small>
                       </div>
-                      <button class="btn btnx">Event</button>
+                      <button class="btn btnx">{{object.category}}</button>
                     </div>
                     <!-- text-box -->
                     <div class="text-box px-1 mt-2" style="height: fit-content;width: 100%;">
@@ -140,9 +140,9 @@ secret, review, social,network, chat, data{% endblock %}
             <div class="topbar px-1 d-flex justify-content-between align-items-center" style="height:50px;width: 100%;">
               <div class="d-flex justify-content-between align-items-center" style="height: fit-content;">
                 <small class="text-dark fw-bold fs-5">{{ object.author }}</small>
-                <small class="px-2 text-secondary">2h</small>
+                <small class="px-2 text-secondary">{{ object.post_date }}</small>
               </div>
-              <button class="btn btnx">Event</button>
+              <button class="btn btnx">{{ object.category }}</button>
             </div>
             <!-- text-box -->
             <div class="text-box px-1 mt-1" style="height: fit-content; width: 100%;">

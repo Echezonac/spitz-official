@@ -2,13 +2,14 @@ from django.shortcuts import render
 from django.views.generic import ListView,DetailView,CreateView,UpdateView,DeleteView
 from django.urls import reverse_lazy
 from .models import Post
+from .forms import PostForm,EditForm
 
 
 
 class HomeView(ListView):
     model = Post
     template_name = 'pages/index.html'
-    ordering = ['id']
+    ordering = ['-post_date']
 
 
 class DetailPostView(DetailView):
@@ -17,13 +18,15 @@ class DetailPostView(DetailView):
 
 class CreatePostView(CreateView):
     model = Post
+    form_class = PostForm
     template_name = 'pages/create_post.html'
-    fields = ["body","author"]
+    # fields = ["body","author","category"]
 
 class UpdatePostView(UpdateView):
     model = Post
+    form_class = EditForm
     template_name = 'pages/update_post.html'
-    fields = ['body']
+    # fields = ['body','category']
 
 class DeletePostView(DeleteView):
     model = Post

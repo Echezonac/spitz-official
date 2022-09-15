@@ -4,3 +4,17 @@
 </p>
 
   <input type="submit" value="Update" class="btn btn-dark">
+  //
+  <p>
+                  <textarea name="body" cols="40" rows="10" placeholder="Type something...." required="" id="id_body" style=""></textarea>
+              </p>
+              <p>
+                <select name="author" required="" id="id_author">
+                    <option value="" selected="">---------</option>
+                    <option value="1">west_J</option>
+                    <option value="2">Enadot</option>
+                    <option value="3">admin</option>
+                </select>
+              </p>
+                
+                

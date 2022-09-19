@@ -1,20 +1,9 @@
-<p>
-    <label for="id_body">Body:</label>
-    <textarea name="body" cols="40" rows="10" required="" id="id_body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores a expedita libero nobis, illum debitis repudiandae provident recusandae ratione dolore ab optio, similique beatae nulla odio enim quam dolores esse commodi, eveniet dolorum? Aspernatur atque expedita earum mollitia illo accusantium, nisi qui laboriosam culpa facere magnam ipsa perferendis ea ipsum?</textarea> 
-</p>
-
-  <input type="submit" value="Update" class="btn btn-dark">
-  //
-  <p>
-                  <textarea name="body" cols="40" rows="10" placeholder="Type something...." required="" id="id_body" style=""></textarea>
-              </p>
-              <p>
-                <select name="author" required="" id="id_author">
-                    <option value="" selected="">---------</option>
-                    <option value="1">west_J</option>
-                    <option value="2">Enadot</option>
-                    <option value="3">admin</option>
-                </select>
-              </p>
-                
-                
+{% if cat_link in cat_option == 'Event' %}
+          <a href="{% url 'cats_page' cat_link %}" class="px-2 py-1 text-center" id="cat-link">
+            <i class="bi bi-calendar-event btn btn-outline-dark {% active_link '#' %} border-0 text-center"></i>
+         </a>
+       {% else %}
+       <a href="{% url 'cats_page' cat_link %}" class="px-2 py-1 text-center" id="cat-link">
+        <i class="bi bi-file-earmark-lock2 btn btn-outline-dark {% active_link '#' %} border-0 text-center"></i>
+       </a>
+       {% endif %}

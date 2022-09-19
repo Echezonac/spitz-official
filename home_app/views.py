@@ -1,7 +1,8 @@
+from unicodedata import category
 from django.shortcuts import render
 from django.views.generic import ListView,DetailView,CreateView,UpdateView,DeleteView
 from django.urls import reverse_lazy
-from .models import Post
+from .models import Post,Category
 from .forms import PostForm,EditForm
 
 
@@ -10,11 +11,31 @@ class HomeView(ListView):
     model = Post
     template_name = 'pages/index.html'
     ordering = ['-post_date']
+    
+    def get_context_data(self,*args,**kwargs):
+        cat_option = Category.objects.all()
+        context = super(HomeView, self).get_context_data(*args, **kwargs)
+        context["cat_option"] = cat_option
+        return context
+    
+def CategoryView(request, cats,):
+    category_post = Post.objects.filter(category = cats)
+    cat_option = Category.objects.all()
+    return render(request,'pages/category.html',{'cats':cats,'category_post':category_post,'cat_option':cat_option})
+    
+   
+
 
 
 class DetailPostView(DetailView):
     model = Post
     template_name = 'pages/spitz-detail.html'
+    
+    def get_context_data(self, *args, **kwargs):
+        cat_option = Category.objects.all()
+        context = super(DetailPostView, self).get_context_data(*args, **kwargs)
+        context["cat_option"] = cat_option
+        return context
 
 class CreatePostView(CreateView):
     model = Post

@@ -18,7 +18,7 @@ class PostForm(forms.ModelForm):
         fields = ('author','body','category')
         
         widgets = {
-            'author':forms.Select(attrs={'class':'form-control'}),
+            'author':forms.TextInput(attrs={'class':'form-control','value':'','type':'hidden','id':'user_id'}),
             'body':forms.Textarea(attrs={'class':'form-control'}),
             'category':forms.Select(choices=choice_list,attrs={'class':'form-control'})
         }

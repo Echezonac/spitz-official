@@ -99,11 +99,18 @@ secret, review, social,network, chat, data{% endblock %}
       {% comment %} spitz container start {% endcomment %}
       <div class="col-lg-6 col-md-9 d-flex  justify-content-center align-items-start bg-light" style="max-height: 100vh;">
         <!--add spitz-col start -->
+        {% if user.id == object.author.id %}
         <form action="" method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <input type="submit" value="Update" class="btn btnx">
         </form>
+        {% else %}
+        <div class="d-flex align-items-center justify-content-center" style="height:500px">
+          <span class-"text-dark pt-5" style="font-size:2em;text-align:center !important;font-weight:700;">Page Not Available</span>
+        </div>
+        {% endif %}
+
         <!--add spitz-col end -->
       </div>
       {% comment %} spitz container end {% endcomment %}
@@ -126,11 +133,17 @@ secret, review, social,network, chat, data{% endblock %}
     <!-- spitz-body-start -->
     <div class="row px-2 d-flex  justify-content-center align-items-start bg-light px-5 py-3">
       <!-- spitz-col start -->
+      {% if user.id == object.author.id %}
        <form action="" method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <input type="submit" value="Update" class="btn btnx">
-    </form>
+      </form>
+    {% else %}
+        <div class="d-flex align-items-center justify-content-center" style="height:500px">
+          <span class-"text-dark pt-5" style="font-size:2em;text-align:center !important;font-weight:700;">Page Not Available</span>
+        </div>
+    {% endif %}
       <!-- spitz-col end -->
     </div>
     <!-- spitz-body-end -->

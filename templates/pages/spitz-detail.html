@@ -97,12 +97,14 @@ secret, review, social,network, chat, data{% endblock %}
                     <div class="spitz-blog-icon pt-3 px-2 d-flex justify-content-around align-items-center ">
                       <i class="bi bi-chat-left text-dark me-4 d-block"></i>
                       <i class="bi bi-heart text-dark me-4 d-block"></i>
-                      <a href="{% url 'post_edit' post.pk %}" class="d-block">
-                        <i class="bi bi-pencil-square text-dark me-4"></i>
-                      </a>
-                       <a href="{% url 'post_delete' post.pk %}" class="d-block">
-                         <i class="bi bi-trash text-danger me-4"></i>
-                      </a>
+                      {% if user.id == object.author.id %}
+                          <a href="{% url 'post_edit' post.pk %}" class="d-block">
+                          <i class="bi bi-pencil-square text-dark me-4"></i>
+                          </a>
+                          <a href="{% url 'post_delete' post.pk %}" class="d-block">
+                          <i class="bi bi-trash text-danger me-4"></i>
+                          </a>
+                      {% endif %}
                       <i class="bi bi-share text-dark d-block"></i>
                     </div>
                     <!-- spitz-blog-icon end -->
@@ -159,12 +161,14 @@ secret, review, social,network, chat, data{% endblock %}
                     <div class="spitz-blog-icon pt-3 px-2 d-flex justify-content-around align-items-center ">
                       <i class="bi bi-chat-left text-dark me-4 d-block"></i>
                       <i class="bi bi-heart text-dark me-4 d-block"></i>
-                      <a href="{% url 'post_edit' post.pk %}" class="d-block">
-                        <i class="bi bi-pencil-square text-dark me-4"></i>
-                      </a>
-                       <a href="{% url 'post_delete' post.pk %}" class="d-block">
-                         <i class="bi bi-trash text-danger me-4"></i>
-                      </a>
+                      {% if user.id == object.author.id %}
+                          <a href="{% url 'post_edit' post.pk %}" class="d-block">
+                            <i class="bi bi-pencil-square text-dark me-4"></i>
+                          </a>
+                          <a href="{% url 'post_delete' post.pk %}" class="d-block">
+                            <i class="bi bi-trash text-danger me-4"></i>
+                          </a>
+                      {% endif %}
                       <i class="bi bi-share text-dark d-block"></i>
                     </div>
                     <!-- spitz-blog-icon end -->

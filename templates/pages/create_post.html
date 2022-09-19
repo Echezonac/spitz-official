@@ -132,5 +132,10 @@ secret, review, social,network, chat, data{% endblock %}
  </div>
 </section>
 {% endif %}
+<script>
+  var name = "{{user.id}}"
+  document.getElementById('user_id').value = name
+
+</script>
 
 {% endblock %}

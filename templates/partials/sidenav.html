@@ -25,13 +25,13 @@
         </li>
         {% endfor %}
         <li class="my-3 px-3">
-            <a href="{% url 'new_post' %}" class="mx-auto btn btn-outline-dark text-decoration-none {% active_link '#' %}">
+            <a href="{% url 'new_post' %}" class="mx-auto btn btn-outline-dark text-decoration-none {% active_link 'new_post' %}">
                 <i class=" mx-1 bi bi-pen sn"></i>
                 Spitz
             </a>
         </li>
         <li class="my-3 px-3">
-            <a href="#" class="mx-auto btn btn-outline-dark text-decoration-none {% active_link 'reviews' %}">
+            <a href="{% url 'reviews' %}" class="mx-auto btn btn-outline-dark text-decoration-none {% active_link 'reviews' %}">
                 <i class=" mx-1 bi bi-eye-fill sn"></i>
                 Review
             </a>
@@ -63,15 +63,15 @@
     {% comment %} Event and Secret {% endcomment %}
      {% for cat_link in cat_option %}
          <a href="{% url 'cats_page' cat_link %}" class="px-2 py-1 text-center">
-            <i class="bi bi-calendar-event btn btn-outline-dark {% active_link '#' %} border-0 text-center cate_options"></i>
+            <i class="bi bi-calendar-event btn btn-outline-dark {% active_link 'cats_page' %} border-0 text-center cate_options"></i>
          </a>
     {% endfor %}
     <!-- Add spitz -->
     <a href="{% url 'new_post' %}" class="px-2 py-1 text-center">
-        <i class="bi bi-pen btn btn-outline-dark {% active_link '#' %} border-0 text-center"></i>
+        <i class="bi bi-pen btn btn-outline-dark {% active_link 'new_post' %} border-0 text-center"></i>
     </a>
     <!-- Review -->
-    <a href="#" class="px-2 py-1 text-center">
+    <a href="{% url 'reviews' %}" class="px-2 py-1 text-center">
         <i class="bi bi-eye-fill btn btn-outline-dark {% active_link 'reviews' %} border-0 text-center"></i>
     </a>
     <!-- end -->

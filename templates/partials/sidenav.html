@@ -1,6 +1,5 @@
 {% load active_link_tags %}
-
-<!-- sidebar start -->
+<!-- LARGE & MEDIUM SCREEN NAVBAR START -->
 <div class="col-lg-2 col-md-3 bg-white sidebar d-none d-md-block" style="max-height:100vh !important;min-height:100vh;">
     <ul class="p-0 py-4" style="width: 100%;height: inherit !important;">
         <!-- brand name start -->
@@ -17,20 +16,16 @@
                 Home
             </a>
         </li>
-        <li class="my-3 px-3">
-            <a href="#" class="mx-auto btn btn-outline-dark text-decoration-none {% active_link '#' %}">
-                <i class=" mx-1 bi bi-calendar-event sn"></i>
-                Events
-            </a>
-        </li>
-        <li class="my-3 px-3">
-            <a href="#" class="mx-auto btn btn-outline-dark text-decoration-none {% active_link '#' %}">
+        {% for cat_link in cat_option %}
+         <li class="my-3 px-3">
+            <a href="{% url 'cats_page' cat_link %}" class="mx-auto btn btn-outline-dark text-decoration-none {% active_link 'cats_page' %}">
                 <i class=" mx-1 bi bi-file-earmark-lock2 sn"></i>
-                Secret
+                {{ cat_link }}
             </a>
         </li>
+        {% endfor %}
         <li class="my-3 px-3">
-            <a href="#" class="mx-auto btn btn-outline-dark text-decoration-none {% active_link '#' %}">
+            <a href="{% url 'new_post' %}" class="mx-auto btn btn-outline-dark text-decoration-none {% active_link 'new_post' %}">
                 <i class=" mx-1 bi bi-pen sn"></i>
                 Spitz
             </a>
@@ -56,7 +51,7 @@
         <!-- sidebar menu end -->
     </ul>
 </div>
-<!-- sidebar end -->
+<!-- LARGE & MEDIUM SCREEN NAVBAR START -->
 
 <!-- SMALL SCREEN NAVBAR START -->
 <div class="col-12 bg-white d-flex d-md-none justify-content-evenly text-center fixed-bottom px-2"
@@ -65,17 +60,15 @@
     <a href="{% url 'home_page' %}" class="px-2 py-1 text-center">
         <i class="bi bi-house btn btn-outline-dark {% active_link 'home_page' %} border-0 text-center"></i>
     </a>
-    <!-- Events -->
-    <a href="#" class="px-2 py-1 text-center">
-        <i class="bi bi-calendar-event btn btn-outline-dark {% active_link '#' %} border-0 text-center"></i>
-    </a>
-    <!-- Secrets -->
-    <a href="#" class="px-2 py-1 text-center">
-        <i class="bi bi-file-earmark-lock2 btn btn-outline-dark {% active_link '#' %} border-0 text-center"></i>
-    </a>
+    {% comment %} Event and Secret {% endcomment %}
+     {% for cat_link in cat_option %}
+         <a href="{% url 'cats_page' cat_link %}" class="px-2 py-1 text-center">
+            <i class="bi bi-calendar-event btn btn-outline-dark {% active_link 'cats_page' %} border-0 text-center cate_options"></i>
+         </a>
+    {% endfor %}
     <!-- Add spitz -->
-    <a href="#" class="px-2 py-1 text-center">
-        <i class="bi bi-pen btn btn-outline-dark {% active_link '#' %} border-0 text-center"></i>
+    <a href="{% url 'new_post' %}" class="px-2 py-1 text-center">
+        <i class="bi bi-pen btn btn-outline-dark {% active_link 'new_post' %} border-0 text-center"></i>
     </a>
     <!-- Review -->
     <a href="{% url 'reviews' %}" class="px-2 py-1 text-center">
@@ -114,3 +107,7 @@
         background-color: var(--red-color) !important;
     }
 </style>
+<script>
+    //cate_options = document.getElementsByClassName('cate_options')
+  
+</script>

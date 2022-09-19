@@ -1,20 +1,9 @@
-
-     
-      
-   
-
-     
-        
-          
-      
-            
-             
-             
-           
-        
-          
-         
-     
-       
-    
-
+{% if cat_link in cat_option == 'Event' %}
+          <a href="{% url 'cats_page' cat_link %}" class="px-2 py-1 text-center" id="cat-link">
+            <i class="bi bi-calendar-event btn btn-outline-dark {% active_link '#' %} border-0 text-center"></i>
+         </a>
+       {% else %}
+       <a href="{% url 'cats_page' cat_link %}" class="px-2 py-1 text-center" id="cat-link">
+        <i class="bi bi-file-earmark-lock2 btn btn-outline-dark {% active_link '#' %} border-0 text-center"></i>
+       </a>
+       {% endif %}

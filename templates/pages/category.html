@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-<title>{% block title %}Detail_Page - spitz- www.spitz.com{% endblock %}</title>
+<title>{% block title %}Home - spitz- www.spitz.com{% endblock %}</title>
 {% block description %}Spitz is a microblogging and social networking platform on which users post event, secret and
 reviews on products, individuals, organisation and location anonymously. The identity of it's users are private and
 ensure that only real and active users stay on the platform.{% endblock %}
@@ -53,21 +53,22 @@ secret, review, social,network, chat, data{% endblock %}
    <div class="spacer py-2 d-none d-md-block" style="height:100px;"></div>
   {% comment %} header end {% endcomment %}
   {% comment %} blog body start {% endcomment %}
-  <div class="col-12 bg-light">
+  <div class="col-12">
     <div class="row">
       {% comment %} sidenav start {% endcomment %}
       {% include 'partials/sidenav.html' %}
       {% comment %} sidenav end {% endcomment %}
       {% comment %} main side start {% endcomment %}
       {% comment %} spitz container start {% endcomment %}
-      <div class="col-lg-9 col-md-9 bg-light" style="max-height: 100vh;">
+      <div class="col-lg-6 col-md-9 bg-light" style="max-height: 100vh;">
         <div class="row" style="overflow-y:auto !important;z-index: 1500;">
-            <!-- spitz-col start -->
-    <div class="col-12 py-4">
-                <div  class="row p-3 spitz-box mx-auto bg-white rounded-3 shadow-sm"
+           {% for post in category_post %}
+           <!-- spitz-col start -->
+              <div class="col-12 py-4">
+                <a href="{% url 'post-detail' post.pk %}" class="row p-3 spitz-box mx-auto rounded-3 shadow-sm bg-white"
                   style="width: 80%; height: fit-content; text-decoration: none;">
                   <!-- spitz-side bar start -->
-                  <div class="col-2 py-3" style="height:inherit ;">
+                  <div class="col-2 py-3" style="height:inherit;">
                     <img src="{% static 'img/spy.png' %}" class="img-fluid d-block mx-auto" alt=""
                       style="border:1px solid black;border-radius: 50%;height: 50px;padding: 10px;">
                   </div>
@@ -77,15 +78,15 @@ secret, review, social,network, chat, data{% endblock %}
                     <div class="topbar px-1 d-flex justify-content-between align-items-center"
                       style="height:50px;width: 100%;">
                       <div class="d-flex justify-content-between align-items-center" style="height: fit-content;">
-                        <small class="text-dark fw-bold fs-5">{{ object.author }}</small>
-                        <small class="px-2 text-secondary">{{ object.post_date }}</small>
+                        <small class="text-dark fw-bold fs-5">{{post.author}}</small>
+                        <small class="px-2 text-secondary">{{ post.post_date }}</small>
                       </div>
-                      <button class="btn btnx">{{object.category}}</button>
+                      <button class="btn btnx">{{post.category}}</button>
                     </div>
                     <!-- text-box -->
                     <div class="text-box px-1 mt-2" style="height: fit-content;width: 100%;">
                       <p class="text-dark" style="text-align:justify ;font-size: small;">
-                        {{ object.body }}
+                        {{ post.body | slice:":100" }}
                       </p>
                     </div>
                     <!-- text-img-box -->
@@ -97,30 +98,27 @@ secret, review, social,network, chat, data{% endblock %}
                     <div class="spitz-blog-icon pt-3 px-2 d-flex justify-content-around align-items-center ">
                       <i class="bi bi-chat-left text-dark me-4 d-block"></i>
                       <i class="bi bi-heart text-dark me-4 d-block"></i>
-                      {% if user.id == object.author.id %}
-                          <a href="{% url 'post_edit' post.pk %}" class="d-block">
-                          <i class="bi bi-pencil-square text-dark me-4"></i>
-                          </a>
-                          <a href="{% url 'post_delete' post.pk %}" class="d-block">
-                          <i class="bi bi-trash text-danger me-4"></i>
-                          </a>
-                      {% endif %}
                       <i class="bi bi-share text-dark d-block"></i>
                     </div>
                     <!-- spitz-blog-icon end -->
                   </div>
-                </div>
+                </a>
               </div>
-<!-- spitz-col end -->
+              <!-- spitz-col end -->
+           {% endfor %}
         </div>
       </div>
       {% comment %} spitz container end {% endcomment %}
+       <!-- ads start -->
+           {% include 'partials/ads.html' %} 
+      <!-- ads end -->
       {% comment %} main side end {% endcomment %}
     </div>
   </div>
   {% comment %} blog body end {% endcomment %}
 </section>
 <!-- Large and Medium Screen UI End -->
+
 <!-- Small Screen Ui Start -->
 <section class="row d-block d-md-none bg-light" style="max-height: 100vh !important;height: 100vh !important;">
   <!-- header start -->
@@ -132,24 +130,24 @@ secret, review, social,network, chat, data{% endblock %}
     <div class="row px-2" style="overflow-y:auto ;">
   
       <!-- spitz-col start -->
-        <!-- spitz-col start -->
+      {% for post in category_post %}
       <div class="col-12 my-3" style="border-radius: p0px;">
-        <div class="row p-3 spitz-box mx-auto bg-white rounded-3 shadow-sm"
+        <a href="#" class="row p-3 spitz-box mx-auto bg-white rounded-3 shadow-sm"
           style="width: 100%; height: fit-content; text-decoration: none;">
 
           <div class="col-12 p-0" style="height: inherit;">
             <!-- topbar start -->
             <div class="topbar px-1 d-flex justify-content-between align-items-center" style="height:50px;width: 100%;">
               <div class="d-flex justify-content-between align-items-center" style="height: fit-content;">
-                <small class="text-dark fw-bold fs-5">{{ object.author }}</small>
-                <small class="px-2 text-secondary">{{ object.post_date }}</small>
+                <small class="text-dark fw-bold fs-5">{{ post.author }}</small>
+                <small class="px-2 text-secondary">{{ post.post_date }}</small>
               </div>
-              <button class="btn btnx">{{ object.category }}</button>
+              <button class="btn btnx">{{post.category}}</button>
             </div>
             <!-- text-box -->
             <div class="text-box px-1 mt-1" style="height: fit-content; width: 100%;">
               <p class="text-dark" style="text-align:justify ;font-size: small;">
-                {{ object.body }}
+                {{ post.body }}
               </p>
             </div>
             <!-- text-img-box -->
@@ -157,25 +155,18 @@ secret, review, social,network, chat, data{% endblock %}
               <img src="{% static 'img/blog-img.jpg' %}" class="d-block w-100" alt=""
                 style="max-height: fit-content; border-radius: 10px;">
             </div>
-              <!-- spitz-blog-icon start -->
-                    <div class="spitz-blog-icon pt-3 px-2 d-flex justify-content-around align-items-center ">
-                      <i class="bi bi-chat-left text-dark me-4 d-block"></i>
-                      <i class="bi bi-heart text-dark me-4 d-block"></i>
-                      {% if user.id == object.author.id %}
-                          <a href="{% url 'post_edit' post.pk %}" class="d-block">
-                            <i class="bi bi-pencil-square text-dark me-4"></i>
-                          </a>
-                          <a href="{% url 'post_delete' post.pk %}" class="d-block">
-                            <i class="bi bi-trash text-danger me-4"></i>
-                          </a>
-                      {% endif %}
-                      <i class="bi bi-share text-dark d-block"></i>
-                    </div>
-                    <!-- spitz-blog-icon end -->
+            <!-- spitz-blog-icon start -->
+            <div class="spitz-blog-icon pt-3 px-2 d-flex justify-content-around">
+              <i class="bi bi-chat-left text-dark"></i>
+              <i class="bi bi-heart text-dark"></i>
+              <i class="bi bi-share text-dark"></i>
+            </div>
+            <!-- spitz-blog-icon end -->
           </div>
-        </div>
+        </a>
       </div>
-      <!-- spitz-col end -->
+      {% endfor %}
+      
       <!-- spitz-col end -->
   
 

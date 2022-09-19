@@ -1,17 +1,141 @@
 {% extends 'base.html' %}
 {% load static %}
-<title>{% block title %}Home - spitz- www.spitz.com{% endblock %}</title>
+<title>{% block title %}Create_Spitz_Page - spitz- www.spitz.com{% endblock %}</title>
 {% block description %}Spitz is a microblogging and social networking platform on which users post event, secret and
 reviews on products, individuals, organisation and location anonymously. The identity of it's users are private and
 ensure that only real and active users stay on the platform.{% endblock %}
 {% block keywords %}home, users, spitz, location, stay, active, real, only, ensure, private, identity, blog,event,
 secret, review, social,network, chat, data{% endblock %}
 {% block main %}
-<section class="row my-5 mx-auto">
-    <form action="" method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Submit" class="btn btn-dark">
-    </form>
+
+<style>
+  .btnx {
+    background-color: #8d0000 !important;
+    color: white !important;
+
+  }
+  @media (max-width:991px) {
+    .spitz-lg-ads {
+      display: none !important;
+    }
+  }
+  @media (max-width:767px) {
+    .spitz-large-medium-screen {
+      display: none !important;
+    }
+  }
+  @media (min-width:768px) {
+    .spitz-small-screen {
+      display: none;
+    }
+  }
+  p {
+    font-family: var(--font1);
+    font-size: small;
+    text-align: justify;
+  }
+  .ads-box {
+    width: 100%;
+    height: 500px;
+    border-radius: 20px;
+    margin-top: 6px;
+    background-color: #CFD2CF;
+  }
+  .ads-container {
+    width: 80%;
+  }
+  .btnx {
+    background-color: #8d0000 !important;
+    color: white !important;
+  }
+  #id_body{
+    width:100%;
+    outline:none;
+    border:1px solid grey;
+    height: 200px;
+    border:none; 
+    padding: 8px;
+    background:none; 
+  }
+  label{
+    display:none !important;
+  }
+</style>
+
+{% if user.is_authenticated %}
+<!-- Large and Medium Screen UI Start -->
+<section class="row spitz-large-medium-screen" style="max-height: 100vh !important; height: 100vh !important;">
+  {% comment %} header start {% endcomment %}
+   {% include 'partials/header.html' %}
+   <div class="spacer py-2 d-none d-md-block" style="height:100px;"></div>
+  {% comment %} header end {% endcomment %}
+  {% comment %} blog body start {% endcomment %}
+  <div class="col-12">
+    <div class="row">
+      {% comment %} sidenav start {% endcomment %}
+      {% include 'partials/sidenav.html' %}
+      {% comment %} sidenav end {% endcomment %}
+      {% comment %} main side start {% endcomment %}
+      {% comment %} spitz container start {% endcomment %}
+      <div class="col-lg-6 col-md-9 d-flex  justify-content-center align-items-start bg-light" style="max-height: 100vh;">
+        <!--add spitz-col start -->
+          <form class="row mx-auto mt-2 p-3 bg-white" action="" method="post" style="width:80%; height: inherit; box-shadow: 4px 8px 14px 0px rgba(0,0,0,0.75);">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="Spitz" class="btn btnx text-decoration-none">
+          </form>
+        <!--add spitz-col end -->
+      </div>
+      {% comment %} spitz container end {% endcomment %}
+       <!-- ads start -->
+            {% include 'partials/ads.html' %} 
+          <!-- ads end -->
+      {% comment %} main side end {% endcomment %}
+    </div>
+  </div>
+  {% comment %} blog body end {% endcomment %}
 </section>
+<!-- Large and Medium Screen UI End -->
+<!-- Small Screen Ui Start -->
+<section class="row d-block d-md-none bg-light" style="max-height: 100vh !important;height: 100vh !important;">
+  <!-- header start -->
+  {% include 'partials/header.html' %}
+  <!-- header end -->
+  <!-- content start -->
+  <div class="col-12" style="min-height: 86vh;" style="position:relative ; z-index: -10;">
+    <!-- spitz-body-start -->
+    <div class="row px-2 d-flex  justify-content-center align-items-start bg-light">
+      <!-- spitz-col start -->
+      <form class="row mx-auto mt-5 p-3 bg-white" action="" method="post" style="width:80%; height: inherit; box-shadow: 4px 8px 14px 0px rgba(0,0,0,0.75);">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="Spitz" class="btn btnx text-decoration-none">
+      </form>
+      <!-- spitz-col end -->
+    </div>
+    <!-- spitz-body-end -->
+  </div>
+  <!-- content end -->
+  <!-- Navbar start -->
+  {% include 'partials/sidenav.html' %}
+  <!-- Navbar end -->
+</section>
+<!-- Small Screen Ui End -->
+{% else %}
+<section class="row d-flex justify-content-center align-items-center bg-light" style="width:auto; max-height:100vh;height:100vh;">
+ <div style="width:fit-content; height:fit-content; ">
+  <span class-"text-dark" style="font-size:2em;text-align:center !important;font-weight:700;">Page Not Available</span>
+  <div>
+    <p class="text-dark text-center">Don't have an account? <a href="{% url 'signup' %}" class="text-decoration-none">Sign Up</a></p>
+    <p class="text-dark my-3 text-center">Already have an account? <a href="{% url 'login' %}" class="text-decoration-none">Login</a></p>
+  </div>
+ </div>
+</section>
+{% endif %}
+<script>
+  var name = "{{user.id}}"
+  document.getElementById('user_id').value = name
+
+</script>
+
 {% endblock %}

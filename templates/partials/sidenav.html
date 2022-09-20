@@ -1,6 +1,7 @@
 {% load active_link_tags %}
-<!-- LARGE & MEDIUM SCREEN NAVBAR START -->
-<div class="col-lg-2 col-md-3 bg-white sidebar d-none d-md-block" style="max-height:100vh !important;min-height:100vh;">
+
+<!-- sidebar start -->
+<div class="col-lg-2 col-md-3 bg-white sidebar d-none d-md-block overflow-hidden" style="height: 100vh !important;">
     <ul class="p-0 py-4" style="width: 100%;height: inherit !important;">
         <!-- brand name start -->
         <li class="mx-auto ps-5">
@@ -16,14 +17,17 @@
                 Home
             </a>
         </li>
-        {% for cat_link in cat_option %}
-         <li class="my-3 px-3">
-            <a href="{% url 'cats_page' cat_link %}" class="mx-auto btn btn-outline-dark text-decoration-none {% active_link 'cats_page' %}">
+         <li class="my-3 px-3 dropdown dropend" style="min-height: fit-content !important; height: fit-content !important;">
+            <a href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" class="dropdown-toggle mx-auto btn btn-outline-dark text-decoration-none {% active_link 'cats_page' %}">
                 <i class=" mx-1 bi bi-file-earmark-lock2 sn"></i>
-                {{ cat_link }}
+                Categories
             </a>
+            <ul class="dropdown-menu" style="min-height: fit-content !important; position: absolute !important;">
+                {% for cat_link in cat_option %}
+               <li><a class="dropdown-item" href="{% url 'cats_page' cat_link %}">{{ cat_link }}</a></li>
+                {% endfor %}
+            </ul>
         </li>
-        {% endfor %}
         <li class="my-3 px-3">
             <a href="{% url 'new_post' %}" class="mx-auto btn btn-outline-dark text-decoration-none {% active_link 'new_post' %}">
                 <i class=" mx-1 bi bi-pen sn"></i>
@@ -57,22 +61,40 @@
 <div class="col-12 bg-white d-flex d-md-none justify-content-evenly text-center fixed-bottom px-2"
     style="height: fit-content; box-shadow: 0 0 3px #e5e5e5;">
     <!-- Home -->
-    <a href="{% url 'home_page' %}" class="px-2 py-1 text-center">
-        <i class="bi bi-house btn btn-outline-dark {% active_link 'home_page' %} border-0 text-center"></i>
+    <a href="{% url 'home_page' %}" class="px-2 py-1 text-center text-decoration-none">
+        <span class="bi bi-house btn btn-outline-dark {% active_link 'home_page' %} border-0 text-center">
+            <small><small>Home</small></small>
+        </span>
     </a>
     {% comment %} Event and Secret {% endcomment %}
-     {% for cat_link in cat_option %}
-         <a href="{% url 'cats_page' cat_link %}" class="px-2 py-1 text-center">
-            <i class="bi bi-calendar-event btn btn-outline-dark {% active_link 'cats_page' %} border-0 text-center cate_options"></i>
+         <a href="#" class="px-2 py-1 text-center dropdown">
+            <button class="bi bi-calendar-event btn btn-outline-dark {% active_link 'cats_page' %} border-0 text-center cate_options dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <br><small><small>Category</small></small>
+            </button>
+            <ul class="dropdown-menu">
+                {% for cat_link in cat_option %}
+                <li><a class="dropdown-item" href="{% url 'cats_page' cat_link %}">{{cat_link}}</a></li>
+                {% endfor %}
+            </ul>
          </a>
-    {% endfor %}
     <!-- Add spitz -->
     <a href="{% url 'new_post' %}" class="px-2 py-1 text-center">
-        <i class="bi bi-pen btn btn-outline-dark {% active_link 'new_post' %} border-0 text-center"></i>
+        <span class="bi bi-pen btn btn-outline-dark {% active_link 'new_post' %} border-0 text-center">
+            <small><small>Spitz</small></small>
+        </span>
+        
+    </a>
+    <!-- Secrets -->
+    <a href="#" class="px-2 py-1 text-center text-decoration-none">
+        <span class="bi bi-file-earmark-lock2 btn btn-outline-dark {% active_link '#' %} border-0 text-center">
+            <small><small>Secrets</small></small>
+        </span>
     </a>
     <!-- Review -->
-    <a href="{% url 'reviews' %}" class="px-2 py-1 text-center">
-        <i class="bi bi-eye-fill btn btn-outline-dark {% active_link 'reviews' %} border-0 text-center"></i>
+    <a href="{% url 'reviews' %}" class="px-2 py-1 text-center text-decoration-none">
+        <span class="bi bi-eye-fill btn btn-outline-dark {% active_link 'reviews' %} border-0 text-center">
+            <small><small>Reviews</small></small>
+        </span>
     </a>
     <!-- end -->
 </div>
